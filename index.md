@@ -1,10 +1,10 @@
-An Open Dossier · **NNN**
+An Open Dossier · **Futurism-UBI-001**
 
-# @@TITLE@@
+# Universal Basic Income
 
-*@@NAME@@ — @@AFFILIATION@@*
+*Irfan Ali-Khan — Independent Researcher*
 
-@@ABSTRACT@@. This dossier surveys @@FIELD@@: the live avenues, what each rests on, and where the open questions and forward bets sit. Every card in the landscape below carries an honest status label — established findings asserted, open questions and forecasts labeled as such. End it with: **Don't trust this paper — run it.**
+Working draft — research in progress. This dossier surveys universal basic income: the live avenues, what each rests on, and where the open questions and forward bets sit. Every card in the landscape below carries an honest status label — established findings asserted, open questions and forecasts labeled as such. End it with: **Don't trust this paper — run it.**
 
 ## Avenues
 
@@ -83,6 +83,6 @@ Pull the landscape together: which avenues are solid, which are live bets, which
 
 ## References
 
-- **Journal 'YY** — @@CITE-WHO@@. @@CITE-WHAT@@ *@@CITE-SRC@@*
+- **Journal 'YY** — Author et al. (Year). Plain-language summary of what it showed and why it matters — to be filled during prior-art recon. *Venue, Vol, Page (Year), DOI/arXiv*
 
-- **Journal 'YY** — @@CITE-WHO@@. @@CITE-WHAT@@ *@@CITE-SRC@@*
+- **Journal 'YY** — Author et al. (Year). Plain-language summary of what it showed and why it matters — to be filled during prior-art recon. *Venue, Vol, Page (Year), DOI/arXiv*
