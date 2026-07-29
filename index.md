@@ -4,7 +4,7 @@ An Open Dossier · **Futurism-UBI-001**
 
 *Irfan Ali-Khan — Independent Researcher*
 
-This dossier asks whether a currency can enforce, by protocol rather than the accident of jurisdiction, both a thriving economy and a floor for a life worth living — and whether it can reach the wealth that escapes into stocks and property. It is a survey before it is a design: Part I maps what crypto-UBI projects and the UBI pilots have actually shown, what failed and why, labeled claim by claim; a reserved slot above it awaits the candidate blueprint. The discipline is a clean split — deployed facts and pilot results cited and labeled, the central stability question and the asset mechanism held open and honest. **Don't trust this paper — run it.**
+This dossier asks whether a currency can enforce, by protocol rather than the accident of jurisdiction, both a thriving economy and a floor for a life worth living — and whether it can reach the wealth that escapes into stocks and property. It is a survey first: Part I maps what crypto-UBI projects and the UBI pilots have actually shown, what failed and why, labeled claim by claim; Part II above it proposes a candidate blueprint — the Commonwealth Protocol — labeled throughout as exploratory conjecture. The discipline is a clean split — deployed facts and pilot results cited and labeled, the central stability question and the asset mechanism held open and honest. **Don't trust this paper — run it.**
 
 ## THE PREMISE — stated openly as the author's
 
@@ -15,6 +15,70 @@ This dossier asks whether that has to remain true. Is there a set of economic ru
 This document does not assume the answer is yes. It maps what has been tried, states plainly what failed and why, and then constructs the most rigorous candidate design the evidence permits — with the failure conditions named, so the answer can be *no*.
 
 *(This premise is a normative stance, not a claim; it appears in no ledger row. Every factual statement below carries a label, and every label is true.)*
+
+## PART II — THE CANDIDATE: the Commonwealth Protocol
+
+**DESIGN CONJECTURE — nothing below is asserted to work. One falsifiable core; attack surface enumerated. Working name only.**
+
+This part composes the survivors of Part I into a single design. The organizing rule comes from history: voluntary levy systems survive when the obligation attaches to a benefit at one irrevocable entry point and is enforced by the asset itself thereafter — condominium covenants, Hanseatic dues — and they die when payment is a recurring choice: Freicoin's decaying token lost to non-decaying rivals, and the Articles of Confederation's unenforced requisitions killed the confederation in a decade. Part I's graveyard is this same failure six times over: distribution without demand.
+
+### Four layers, one firewall
+
+*(figure: The Commonwealth Protocol: four layers, with a constitutional firewall isolating the personhood registry from the money layers — Layer 0 — the personhood registry — is firewalled from the money layers and holds exactly one right: the dividend. Layer 1 (the treasury) pays that dividend only from realized yield plus levy, never issuance; Layer 2 wraps assets under a low, banded depreciating-license levy; Layer 3 makes every covenant obligation payable only in the dividend token. Levy flows up into the treasury; the dividend is the one value permitted to cross the firewall to verified persons.)*
+
+**Layer 0 — personhood, firewalled.** A registry of unique humans (method evaluated against Part I's open criteria) whose members hold exactly one right — the dividend — and whose governance shares no token or treasury coupling with any other layer. The central-bank-independence lesson, applied to identity; the direct answer to the Proof of Humanity fork war.
+
+**Layer 1 — the treasury.** Yield-bearing tokenized assets (today that means Treasuries — the one production-grade rail). The dividend is paid from realized yield plus levy inflow, never issuance. This is an invariant, not a policy: the dividend can be small, but it cannot be fake — and sustainability becomes an accounting identity a script can check.
+
+**Layer 2 — the covenant wrapper.** Assets join the commonwealth by being wrapped under a covenant that runs with the asset, condominium-style. Wrapped assets carry a low, asset-class-tuned depreciating-license levy (Weyl–Zhang): self-assessed within bands, forced-sale softened, small holdings exempt — because loss-aversion, not economic theory, is what the mechanism must survive. Self-assessment is used for allocation, never claimed as a truthful price oracle: its authors state plainly that it cannot incent all owners to announce true valuations.
+
+**Layer 3 — the demand loop.** Every covenant obligation — levy, fee, settlement — is payable only in the dividend token. Knapp's tax-driven money without the state: a pay-community whose obligations anchor its currency.
+
+### The loop that creates demand
+
+*(figure: The chartalist demand loop: levy-payers must buy the token that dividend-recipients sell — Dividend recipients sell tokens to asset holders, who must pay their levy in those same tokens to the treasury, which pays the dividend back to recipients. The loop gives the token a computable floor — roughly the levy rate times the wrapped-asset base divided by velocity — the structural demand every failed crypto-UBI lacked.)*
+
+Asset holders must acquire the token each epoch to meet the levy; dividend recipients are the natural sellers. The UBI recipients become the levy-payers' counterparties by construction — structural flow, not speculation or goodwill. The token's floor is then a computable function of wrapped-asset value, levy rate, and velocity: an attackable claim, which is the point.
+
+### Entry by rings — earning the way to property
+
+*(figure: Entry by rings: earning the way from protocol-native assets out to real property — Ring 1 (protocol-native assets — namespaces, blockspace, protocol land) enforces perfectly by code and bootstraps the system. Ring 2 (tokenized financial assets) enforces strongly via issuer covenants, drawn in by listing plus aggregated dividend-recipient demand. Ring 3 (real property) works only where a jurisdiction adopts the covenant — the minimal-leviathan ring. On-chain title has historically worked only where the state already worked (Georgia), not where it did not (Honduras).)*
+
+The record forbids leading with real property: blockchain land registries succeeded where states already functioned (Georgia — political buy-in, modern records) and died where they did not (Honduras — political resistance; Sweden — pilot concluded, never implemented). So the design earns its way inward-out. For Ring 3 the claim is stated exactly: the protocol does not replace the leviathan; it hands the smallest possible leviathan a redistribution instrument that runs itself. The premise's question — how small can the leviathan get — is answered ring by ring: zero, issuer-sized, registry-sized.
+
+### The falsifiable core
+
+> **OPEN-UNVERIFIED** — **Open challenge (C13).** There exists a levy rate τ, wrapped-asset base W, and velocity v at which the dividend's real purchasing power is sustained over N years for M verified persons with zero issuance — and Rings 1–2 alone reach that region. The flow-of-funds model that parameterizes this becomes a mechanical check. If the model shows Ring 3 is load-bearing — that a minimal leviathan is required — the dossier reports that as its finding. Either answer is the result; the design cannot un-fail its own arithmetic.
+
+### Attack surface, enumerated now
+
+**Wrapping evasion**
+
+Hold the asset in an LLC, trade the LLC off-chain. Unanswerable in Ring 3 without jurisdiction; partly answerable in Ring 2 via issuer covenants. Stated as a scope limit, not solved.
+
+**Valuation gaming**
+
+Inherited from the depreciating-license literature, with its own admission that self-assessment is not a truth serum. Mitigated by low rates and bands; never claimed solved.
+
+**Velocity collapse**
+
+If wrapped-asset value stagnates, levy demand stagnates and the dividend's real value erodes. This is the failure mode the falsifiable core exists to test.
+
+**Bootstrap subsidy vs time-symmetry**
+
+Early-entrant boosts smell like every token ponzi. Constraint borrowed from Ğ1's Relative Theory of Money: any founding-cohort incentive must be bounded, published, decaying — and the model must test whether entry clears with none.
+
+**Regulatory kill-switch**
+
+The French ordinance of 1958 shut down demurrage currencies by decree; a protocol levy on securities can simply be prohibited. Jurisdictional analysis is unfinished work.
+
+**The tiny-dividend truth**
+
+At plausible early scale this pays cents, exactly like GoodDollar. The honest promise is a growth invariant — the dividend grows with the commons and is never faked by issuance — not a living wage.
+
+### What is and is not new
+
+The ingredients are all established: Knapp's tax-driven money, Harberger/Weyl–Zhang partial ownership, Alaska's commons dividend, covenant law. The conjecture is the closed loop — covenant-wrapped assets whose levy is payable only in the token that pays the dividend to verified persons, under a zero-issuance treasury invariant, beside a firewalled registry. The prior-art search for exactly this composition is the novelty gate this dossier has not yet passed, and says so.
 
 **PART I · THE RECORD**
 
@@ -33,7 +97,7 @@ Ledger snapshot, entered 2026-07-29 — twelve claims, none yet verified: six ar
 | Proof of personhood | Per-person issuance stands or falls on sybil resistance; biometric (Worldcoin), social-graph (Duniter/Ğ1), and adjudication (Proof of Humanity) have all shipped — none has uniqueness, privacy, and scale at once. | OPEN-UNVERIFIED | — | C01, C02, C03, C04 |
 | Monetary levers | Reserve-yield issuance (GoodDollar) and demurrage (Gesell/Freicoin/Wörgl/Sarafu) exist as mechanisms; none has defended a dividend's real purchasing power at scale. | OPEN-UNVERIFIED | — | C08, C11, C12 |
 | Work incentives (the pilots) | Finland, Kenya, Stockton, and Alaska show small-to-null labor-supply effects at modest transfers; no pilot reaches the living-wage regime. Cited; awaiting this dossier's own citation audit. | OPEN | — | C05, C06 |
-| Beyond currency: real assets | Sovereign-wealth dividends, Harberger/COST taxation, and RWA tokenization exist independently; coupling non-currency asset redistribution to a per-person dividend is the dossier's exploratory design frontier. | EXPLORATORY-CONJECTURE | — | C09, C10 |
+| The Commonwealth Protocol (Part II) | The candidate composition: covenant-wrapped assets whose depreciating-license levy is payable only in the token that pays a per-person dividend, under a zero-issuance treasury beside a firewalled personhood registry. Established ingredients (chartalism, Harberger/Weyl–Zhang, sovereign-wealth dividends); unproven as a whole. Falsifiable core: C13. | EXPLORATORY-CONJECTURE | — | C09, C10, C13 |
 | The graveyard | Proof of Humanity's UBI token, Circles UBI, and Freicoin each failed on the demand side — value or acceptance — never on distribution. | OPEN-UNVERIFIED | — | C07 |
 | The central challenge | Whether protocol levers — issuance, demurrage, fee recycling, reserve backing — can sustain a UBI's real purchasing power while preserving work incentives; criteria to be set in the reserved blueprint. | OPEN-UNVERIFIED | — | C08 |
 
@@ -112,3 +176,9 @@ The blueprint that will sit above this part must satisfy, at minimum: **(i) dema
 **Duniter/Ğ1 documentation and Laborde, S. (2010), Relative Theory of Money.** Project sources for web-of-trust parameters and Universal Dividend calibration; REPORTED where uncorroborated.
 
 **Grassroots Economics / Sarafu documentation.** Kenyan community-currency deployments with demurrage-adjacent mechanics; REPORTED grade pending independent literature (cite TO-VERIFY).
+
+**Knapp, G.F. (1905/1924).** The State Theory of Money. Macmillan (English edn. 1924). Origin of chartalism: a currency holds value because obligations are payable in it; a pay-community beyond the state can, on the same logic, issue chartal money — the premise Part II's demand loop rests on.
+
+**Weyl, E.G. & Zhang, A.L. Depreciating Licenses.** SSRN 3698941, DOI 10.2139/ssrn.3698941. Partial-ownership licenses under a self-assessed depreciating levy; a tunable rate trades allocative against investment efficiency, with the explicit stated limit that self-assessment cannot incent universally truthful valuations — the Layer-2 mechanism and its named caveat.
+
+**Systematic review of blockchain land administration (2022).** Land Use Policy / ScienceDirect, article S0264837722005002 (DOI TO-VERIFY). Cross-case review: Honduras stalled on political resistance, Sweden concluded its pilot without implementation, and Georgia succeeded via political buy-in and modern records — the evidence behind Ring 3's jurisdiction requirement.

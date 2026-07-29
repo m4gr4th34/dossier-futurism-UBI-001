@@ -16,7 +16,10 @@ the source is an interested party). Nothing here is asserted as verified.
 
 Audit not yet run. Citations for the 2026-07-29 Part I survey are entered but
 unverified: **0 verified · 0 flagged.** The CITE-backed rows awaiting this audit
-are C01, C02, C03, C05, C11, C12.
+are C01, C02, C03, C05, C11, C12. Part II (the Commonwealth Protocol conjecture,
+added 2026-07-29) contributes three further sources — Knapp, Weyl–Zhang, and the
+blockchain land-administration review — supporting the C13 design and its
+ingredients; they are open items 6–8 below.
 
 ## Open audit items
 
@@ -61,6 +64,30 @@ audited state.
    deployment-history and issuance-parameter claims independently, or grade the
    uncorroborated portions REPORTED.
    *Backs:* C02 (social-graph proof-of-personhood / longest-lived dividend).
+
+6. **Knapp, G.F. (1905/1924), The State Theory of Money — verify edition/pagination.**
+   Confirm the standard English edition (Macmillan, 1924, tr. Lucas & Bonar) and
+   that the chartalist claim used in Part II (a currency holds value because
+   obligations are payable in it; a pay-community beyond the state can issue chartal
+   money) is faithfully represented, not overstated.
+   *Backs:* Part II Layer 3 / the chartalist demand loop (the C13 design premise).
+
+7. **Weyl, E.G. & Zhang, A.L., Depreciating Licenses — confirm SSRN id + the stated limit.**
+   DOI 10.2139/ssrn.3698941 (SSRN 3698941). Re-fetch and confirm the allocative-vs-
+   investment-efficiency trade-off and, critically, the authors' explicit statement
+   that self-assessment cannot incent universally truthful valuations — the caveat
+   Part II leans on for Layer 2. Check whether a peer-reviewed version supersedes the
+   working paper.
+   *Backs:* Part II Layer 2 (the depreciating-license levy) and the valuation-gaming
+   attack-surface item.
+
+8. **Blockchain land-administration systematic review — DOI `TO-VERIFY`.**
+   ScienceDirect article S0264837722005002 (Land Use Policy, 2022). Resolve the DOI
+   and confirm the three cases as used in Part II Ring 3: Honduras stalled on
+   political resistance, Sweden concluded its pilot without implementation, Georgia
+   succeeded via political buy-in and modern records. Until resolved, cite as
+   TO-VERIFY; do not assert the review as verified.
+   *Backs:* Part II Ring 3 (the jurisdiction requirement / minimal-leviathan claim).
 
 ## Closing the audit
 

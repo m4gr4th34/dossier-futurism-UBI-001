@@ -133,8 +133,11 @@ surfaces (the self-explaining front door and the audit trail), its manuscript, i
 verification script, and its claim ledger all live here.
 
 ## Standing context (edit per dossier)
-- Open claims: 12 claims entered 2026-07-29 (C01–C12) in claim_ledger.csv,
-  none yet verified. The citation-backed rows (C01–C03, C05, C11, C12) sit at
+- Open claims: 13 claims entered 2026-07-29 (C01–C13) in claim_ledger.csv,
+  none yet verified. C13 (added with Part II) is the Commonwealth Protocol's
+  falsifiable core — type EST, status OPEN-UNVERIFIED, verified by a pending
+  flow-of-funds model (which becomes a verify_numbers check once parameterized).
+  The citation-backed rows (C01–C03, C05, C11, C12) sit at
   status OPEN pending this dossier's own citation audit — they become ESTABLISHED
   only when that audit re-checks them. Author judgments C04, C06, C07 and the
   central challenge C08 are OPEN-UNVERIFIED. The asset-redistribution mechanism is
@@ -205,17 +208,27 @@ verification script, and its claim ledger all live here.
     publishable, defensible spine is the honest separation of what pilots and
     deployed projects have demonstrated from what this design would still have to
     prove.
-  - Two-phase structure (as built): the dossier is Part I (the prior-art survey,
-    committed 2026-07-29) with a RESERVED SLOT for Part II (the candidate
-    blueprint) that lands ABOVE Part I when drafted. Part I is written
-    self-contained by design — it must survive being pushed down and later frozen
-    as its own DOI'd chapter, so it back-references nothing. The reserved slot is
-    an HTML comment in editions/index.source.html between the premise and Part I.
+  - Two-phase structure (as built): Part II (the candidate blueprint) is now
+    DRAFTED, 2026-07-29, sitting ABOVE Part I in editions/index.source.html — the
+    reserved slot is filled. It is the Commonwealth Protocol (working name), drafted
+    entirely as EXPLORATORY-CONJECTURE: a four-layer stack (firewalled personhood
+    registry / zero-issuance treasury / covenant wrapper with a Weyl–Zhang
+    depreciating-license levy / chartalist demand loop), an entry-by-rings adoption
+    path, one falsifiable core (C13), a six-item attack surface, and three living
+    figures (types commonwealth-stack/-loop/-rings in figures/commonwealth.js).
+    Part I remains self-contained by design — it back-references nothing and must
+    survive being pushed down and later frozen as its own DOI'd chapter.
+  - Next work items before ANY status changes: (1) the flow-of-funds
+    parameterization that turns C13 from prose into a real verify_numbers check
+    (τ, W, v, N, M made concrete); (2) the deeper novelty search. Neither is done.
   - Novelty-claim gate: the deeper novelty search (SSRN/NBER + the French
     monnaie-libre corpus) is REQUIRED before C10 is asserted in any blueprint
-    prose. Until then C10 stays NOVEL / TO-OUR-KNOWLEDGE with its search scope and
-    date in the verifier field; do not upgrade it on the strength of the first
-    ~12-search pass alone.
+    prose. It now has a PRECISE target — the exact closed loop Part II describes:
+    covenant-wrapped assets whose depreciating-license levy is payable only in the
+    token that funds a per-person dividend, under a zero-issuance treasury beside a
+    firewalled personhood registry. Until that search runs, C10 stays NOVEL /
+    TO-OUR-KNOWLEDGE with its scope and date in the verifier field; do not upgrade
+    it on the strength of the first ~12-search pass alone.
   - C08 success criteria: when the blueprint finalizes the central challenge, its
     quantitative success criteria MUST include all four legs — a purchasing-power
     criterion, a scale criterion, velocity/sink data, and a labor-market criterion.
