@@ -5,121 +5,96 @@ byline: Irfan Ali-Khan — Independent Researcher
 active: index.html
 -->
 <!--slot:body-->
-<p class="abstract">Working draft — research in progress. This dossier surveys universal basic income: the live avenues, what each rests on, and where the open questions and forward bets sit. Every card in the landscape below carries an honest status label — established findings asserted, open questions and forecasts labeled as such. End it with: <b>Don't trust this paper — run it.</b></p>
+<p class="abstract">This dossier asks whether a currency can enforce, by protocol rather than the accident of jurisdiction, both a thriving economy and a floor for a life worth living — and whether it can reach the wealth that escapes into stocks and property. It is a survey before it is a design: Part I maps what crypto-UBI projects and the UBI pilots have actually shown, what failed and why, labeled claim by claim; a reserved slot above it awaits the candidate blueprint. The discipline is a clean split — deployed facts and pilot results cited and labeled, the central stability question and the asset mechanism held open and honest. <b>Don't trust this paper — run it.</b></p>
+
+<h2>THE PREMISE — stated openly as the author's</h2>
+
+<p>We are all human, born by lottery onto some coordinates of this rock. Which patch of geography, which institutions, which century — none of it chosen, all of it decisive. Where life is fair, it is mostly because a local leviathan happens, by luck and history, to enforce a measure of fairness; where it isn't, hope does the unpaid work. The rules that govern economic life have always been local, accidental, and enforced from above.</p>
+
+<p>This dossier asks whether that has to remain true. Is there a set of economic rules — enforceable by protocol rather than by the accident of jurisdiction — that a plural consciousness could adopt: rules that encourage a thriving economy <em>and</em> guarantee a floor for a life worth living? Is there an overlap between the two, or is the trade-off fundamental? Can an economy with a basic income built into its money survive contact with reality — and can it reach the wealth that today escapes into stocks and property?</p>
+
+<p>This document does not assume the answer is yes. It maps what has been tried, states plainly what failed and why, and then constructs the most rigorous candidate design the evidence permits — with the failure conditions named, so the answer can be <em>no</em>.</p>
+
+<p><em>(This premise is a normative stance, not a claim; it appears in no ledger row. Every factual statement below carries a label, and every label is true.)</em></p>
+
+<!-- BLUEPRINT SLOT — Part II (the candidate design) lands HERE, ABOVE the survey, when drafted. Part I below is written self-contained so it survives being pushed down and later frozen as its own DOI'd chapter. -->
+
+<div class="kicker teal">PART I · THE RECORD</div>
+<h2>PART I — THE RECORD: what has been tried, what failed, what held</h2>
+
+<h3>How to read this part</h3>
+<p>Every claim here is either a cited finding, a reported claim from an interested party (recorded for provenance, not proof), or an author judgment labeled as such. Where a project's own documentation is the only source, that is said plainly. One honesty caveat governs this first release: the citations are entered but this dossier's own citation audit has not yet run, so every source-backed claim currently sits at status OPEN — it becomes ESTABLISHED only once that audit re-fetches and re-checks it. Nothing here is asserted as verified.</p>
+
+<p>Ledger snapshot, entered 2026-07-29 — twelve claims, none yet verified: six are citation-backed but awaiting the citation audit (status OPEN); four are author judgments held <span class="mono">OPEN-UNVERIFIED</span>, including <span class="mono">C08</span>, the central open challenge; one is <span class="mono">EXPLORATORY-CONJECTURE</span> (the asset-redistribution mechanism, <span class="mono">C09</span>); and one is a <span class="mono">NOVEL</span> claim recorded to-our-knowledge (<span class="mono">C10</span>, pending a deeper novelty search). Zero are asserted as established. Every count is a live status, not a verified one; the full typed ledger is claim_ledger.csv in the repository.</p>
 
 <!--mount:howto-->
 
-<!-- ============================================================
-     SURVEY LANDSCAPE — the survey-shaped scaffold's centrepiece.
-     One card per avenue/option in the field. Drive it from the
-     AVENUES array in the script below (single source -> cards).
-     Each card: name + one-line thesis, an honest status label,
-     an optional dated forecast, and its sources. The card's top
-     border is colored by status for at-a-glance scanning.
-     STATUS values: ESTABLISHED / OPEN-UNVERIFIED / FORECAST /
-     REPORTED (others fall back to a neutral chip + border).
-     ============================================================ -->
 <!--mount:landscape-->
 
 <!--mount:console-->
 
-<!-- ============================================================
-     AUTHOR INSTRUCTIONS (delete this comment when done):
-     This is the SURVEY-shaped self-explaining edition. The arc:
-       01 the field, and why survey it (problem as a story)
-       02 established foundations (plain prose + citations)
-       03 the avenues, one by one (each labeled in place)
-       04 what would settle the open questions
-       05 synthesis
-     Conventions:
-     - Wrap technical terms:  <button class="term" data-d="3-5 sentence plain explanation">term</button>
-     - Cite with chips:       <button class="cite" data-c="KEY">Venue 'YY</button>  (+ add KEY to CITES below)
-     - ESTABLISHED claims are asserted plainly, with citations. No box.
-     - OPEN-UNVERIFIED claims get an amber .openclaim box at the claim site.
-     - FORECAST claims get a violet .forecast box: state the estimate, the
-       reasoning, and the MANDATORY dated, falsifiable signpost.
-     - REPORTED items get a coral .reported box: name the interested-party
-       source, state plainly it is not independently reproduced, and give
-       the mundane candidate explanation with equal prominence.
-     - A genuine scientific DISPUTE is not a new status: render it as an
-       ESTABLISHED meta-claim ("the field is divided on X") citing both sides.
-     ============================================================ -->
+<h2><span class="num">01</span>Proof of personhood — the binding constraint</h2>
+<p>Any per-person issuance stands or falls on <button class="term" data-d="A system's ability to stop one actor from minting many fake identities to claim more than their share. For a per-person dividend it is the whole game: without it, one person farms thousands of accounts and the payout collapses.">sybil resistance</button>. Three approaches have shipped. <b>Biometric</b> (Worldcoin/World ID): iris-scan enrollment at the largest scale attempted — tens of millions of verified users — purchased at the cost of documented regulatory rejection (suspensions or bans including Kenya 2023, Spain and Portugal 2024, Brazil 2025, over consent and data-protection law) and a structural risk no patch removes: biometric identifiers cannot be rotated if compromised. <b>Social-graph</b> (Duniter/Ğ1; Circles): membership by certification within a web of trust. Ğ1 has issued a daily Universal Dividend under the Relative Theory of Money since 2017 — the longest-lived per-person crypto dividend in existence — with issuance calibrated for symmetry between generations (roughly 10% annual monetary growth shared equally, so late joiners create the same lifetime share as early ones). Its demonstrated ceiling is scale: a community of tens of thousands, mostly francophone, with modest purchasing power. <b>Adjudication-based</b> (Proof of Humanity): a challengeable registry with dispute resolution. The registry functioned; what happened to its paired token is in the graveyard. The honest joint statement, entered as open claim <span class="mono">C04</span>: no approach has yet demonstrated uniqueness, privacy, and scale simultaneously.</p>
 
-<div class="kicker teal">THE CHAPTER · NARRATIVE</div>
-<h2><span class="num">01</span>THE FIELD, AND WHY SURVEY IT</h2>
+<h2><span class="num">02</span>The money side — issuance, reserves, demurrage</h2>
+<p><b>GoodDollar</b> is the closest deployed relative of an endowment-funded dividend: supporters stake capital in third-party yield protocols, the yield flows into a reserve contract that mints G$, and daily claimers split the remainder. The mechanics function; the economics are candid about their own limits — G$ trades at a fraction of a cent, and the project's "proof of need" framing (only those for whom tiny sums matter will bother claiming daily) is an admission that per-person value cannot yet be defended at scale. <b>Demurrage</b> (the Gesell/Freigeld lineage): the one historical success, Wörgl 1932, operated inside captive demand — the municipality accepted the depreciating scrip for taxes. Where <button class="term" data-d="A holding fee on money itself: a balance slowly shrinks if you sit on it, to push currency into circulation. Silvio Gesell's idea, tried at Woergl in 1932. It stimulates spending mainly where people are compelled to hold the currency.">demurrage</button> has competed voluntarily against non-decaying money, it has lost: Freicoin implemented Gesell faithfully on Bitcoin-derived rails and found almost no users, and the French demurrage experiments of the 1950s were terminated by ordinance — a reminder that the legal kill-switch on parallel currencies predates crypto. The living exception proves the rule: Grassroots Economics' Sarafu community currencies in Kenya operate demurrage-adjacent mechanics inside deliberately local demand loops. Entered as <span class="mono">C11</span>/<span class="mono">C12</span>.</p>
 
-<p>Open with the field as a story: what is the question everyone in this area is
-circling, why is it hard, and why is a map of the whole landscape — rather than one
-more result — the useful thing to publish right now? Introduce your first
-<button class="term" data-d="Replace this with a 3-5 sentence plain-language explanation of the term, written for a smart non-specialist. What is it, why does it matter to this field, and what is the one surprising thing about it?">tappable term</button>
-here, and your first sourced claim
-<button class="cite" data-c="ref1">Journal 'YY</button>.</p>
+<h2><span class="num">03</span>What the pilots actually established about work</h2>
+<p>Four bodies of evidence anchor the work-incentive question. <b>Finland 2017–18</b> (Kangas et al., final report 2020): 2,000 unemployed persons, €560/month unconditional; employment effects small (about 6 additional days worked in the reference period), wellbeing effects clearly positive; a sanction-regime reform mid-experiment confounds the second year, and the report says so. <b>Kenya</b> (Banerjee, Suri, Niehaus et al.): the largest UBI RCT ever run — roughly 23,000 treated adults across lump-sum, two-year, and twelve-year arms at about $22.50/month — found no work disincentive and shifts from wage labor toward business formation. <b>Stockton SEED</b> (West &amp; Castro Baker, 2021): $500/month, n=125; full-time employment rose 28%→40% in year one versus 32%→37% in control — directionally positive, but a small philanthropic pilot, and labeled as such. <b>Alaska</b> (Jones &amp; Marinescu, AEJ: Economic Policy 2022): four decades of a universal annual dividend (about $2,000/person recently) produced no aggregate employment decline, with part-time work up 1.8 points and general-equilibrium stimulus plausibly offsetting individual labor-supply effects. The load-bearing limit, entered as <span class="mono">C06</span>: modest transfers, modest-to-null effects — and no study anywhere reaches the living-wage regime. Extrapolation in either direction is unsupported.</p>
 
-<p class="punch">End the opening with the one line a reader should carry into the rest of the survey.</p>
+<h2><span class="num">04</span>Asset precedents — the ingredients of the hard question</h2>
+<p>Three cited ingredients exist for redistribution beyond currency; no published work combines them. <b>The sovereign-wealth dividend</b>: Alaska (and Norway's fund, without the dividend) show that a diversified asset endowment can fund a universal payment for decades — state-run, off-chain. <b>Harberger taxation</b> (Weyl &amp; Posner, Radical Markets, 2018): owners self-assess value, pay a continuous levy on the declaration, and must sell at the declared price — a mechanism with a genuine academic literature on its allocative-versus-investment-efficiency trade-off, implemented on-chain only for digital assets and micro-experiments (EIP-5320; Wildcards; Geo Web; This Artwork Is Always On Sale) plus one unoperationalized exploration for real land (CityDAO). <b>RWA tokenization</b>: roughly $32B on-chain by mid-2026, led by US Treasuries (about $15B) — but real estate at only about $200M, 97% of value inaccessible to US retail, and a substantial share lacking clear regulatory frameworks (industry-tracker figures; REPORTED grade). The rails exist for Treasuries, barely exist for property, and are legally gated everywhere.</p>
 
-<h2><span class="num">02</span>ESTABLISHED FOUNDATIONS</h2>
+<h2><span class="num">05</span>The graveyard — documented failure modes</h2>
+<p><b>Proof of Humanity's UBI token — died of no-sink issuance plus governance capture.</b> One token per verified human per hour, streamed continuously, with only cosmetic burns: relentless sell pressure met no structural demand, and the Kleros cooperative's post-mortem documents an ~87% loss on its own liquidity position and a governance war in which token-aligned voters passed proposals that effectively forked the registry. The identity layer and the money layer captured each other. <em>Forecloses: naked streaming issuance; shared governance between registry and token.</em></p>
 
-<p>State plainly what the field has actually demonstrated — the bedrock every avenue
-shares. These are ESTABLISHED claims: asserted directly, each with a citation
-<button class="cite" data-c="ref2">Journal 'YY</button>. Being confident here is correct, not
-incautious; documented facts are bedrock, and timidity about them is its own kind of
-dishonesty. Save the hedging for the claims that have earned it.</p>
+<p><b>Circles UBI (Berlin) — died of the acceptance problem.</b> Personal-currency web of trust, 7% demurrage, real merchant-onboarding effort, shut down late 2023: participants accumulated tokens faster than the merchant network could absorb them, and the academic post-mortems converge on one sentence — an alternative currency cannot survive on subsidies; it must solve a real coordination problem. <em>Forecloses: issuance-plus-goodwill as an adoption theory.</em></p>
 
-<details class="deeper"><summary>Go deeper: NAME THE TECHNICAL LAYER</summary>
-<div class="body">Equations and formal detail live here, collapsed by default. The
-narrative above must be complete without opening this.
-<div class="eq" data-tex="E = mc^2"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E = mc^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord mathnormal">m</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></div></div>
-</details>
+<p><b>Freicoin — demurrage without captive demand.</b> Faithful implementation, negligible adoption: a decaying token is strictly dominated as a store of value and never acquired the exchange economy that would justify holding it. <em>Forecloses: demurrage as a voluntary default.</em></p>
 
-<h2><span class="num">03</span>THE AVENUES</h2>
+<p><b>Democracy Earth's HOUR→UBI lineage</b> — sold-then-unreleased tokens, missed deadlines, diverted funds, per the Kleros account (an interested party in the dispute; REPORTED, provenance stated). <em>A caution about token-first funding, not a mechanism result.</em></p>
 
-<p>The heart of the survey: walk each avenue in turn, and label each exactly as
-strongly as its evidence allows. The four conventions below show every status home.</p>
+<p>The joint lesson, entered as <span class="mono">C07</span>: every deployed crypto-UBI failed on the demand side — value or acceptance — never on distribution. Distribution is solved. Defensible value is not.</p>
 
-<h3>Avenue A — a mature, documented direction</h3>
-<p>Describe it in plain language and assert what is established about it, with sources
-<button class="cite" data-c="ref1">Journal 'YY</button>. No callout box — established prose carries itself.</p>
+<h2><span class="num">06</span>Open questions — the territory ahead</h2>
+<p>(1) Sybil resistance with uniqueness, privacy, and scale together (<span class="mono">C04</span>). (2) Whether any protocol lever set can sustain a dividend's real purchasing power — no deployed system has, and no agreed success metrics even exist; this dossier's central open challenge (<span class="mono">C08</span>) will state falsifiable criteria. (3) Work incentives at living-wage scale (<span class="mono">C06</span>). (4) Endogenous demand: why hold the token — the question every corpse above answers in the negative. (5) Whether non-currency assets can be brought into the loop at all (<span class="mono">C09</span>/<span class="mono">C10</span>) — the blueprint's burden, carried openly with its attack surface: capital flight, oracle and valuation manipulation, and the legal enforceability of on-chain claims to off-chain property.</p>
 
-<h3>Avenue B — a direction with a central open question</h3>
-<p>Lay out the avenue, then mark the open question honestly, right where it arises:</p>
-<div class="openclaim">
-<span class="tag">OPEN-UNVERIFIED</span><b>Honest label:</b> DESCRIBE THE UNVERIFIED CLAIM. State that it is claim <span class="mono">CNN</span> in the public ledger and an open challenge: <b>the first person to confirm or refute it gets named credit in the next version.</b>
-</div>
+<h2><span class="num">07</span>Design constraints extracted from the record</h2>
+<p>The blueprint that will sit above this part must satisfy, at minimum: <b>(i) demand before distribution</b> — sinks and holding reasons specified before issuance schedules (Circles, Freicoin, PoH-UBI); <b>(ii) no naked streaming issuance</b> (PoH-UBI); <b>(iii) identity layer firewalled from money-layer governance</b> (the PoH fork war); <b>(iv) demurrage only inside a captive-demand loop</b> (Wörgl versus Freicoin; Sarafu); <b>(v) a purchasing-power target requires an endowment</b> — the gap between GoodDollar's pennies and Alaska's forty years is the funding problem, not the mechanics; <b>(vi) the asset mechanism is the answer to the tax-base problem</b> — wealth held as equities and property is invisible to currency-level redistribution, which is why currency-only UBI coins fought over a base too small to matter; any serious design must reach it, and must survive the enumerated attacks or say that it cannot. A blueprint that cannot fail its own analysis is a whitepaper.</p>
 
-<h3>Avenue C — a direction you are making a forward bet on</h3>
-<p>Where you offer a judgment about how an avenue will develop, label it as a forecast —
-never smuggle an estimate in as a fact:</p>
-<div class="forecast">
-<span class="tag">FORECAST</span><b>Labeled estimate:</b> STATE THE ESTIMATE (e.g. ~35%) AND THE REASONING BEHIND IT. <b>Signpost:</b> name the dated, falsifiable event that will later mark this right or wrong (e.g. "by 2030, X is demonstrated at scale Y"). A forecast without a dated signpost is just an opinion with a number on it; the signpost is its verifier.
-</div>
+<h2>References</h2>
+<p><em>Full cite cards; identifiers marked TO-VERIFY are to be resolved in the citation audit, never asserted. Until that audit runs, these sources back claims held at status OPEN.</em></p>
 
-<h3>Avenue D — a direction sourced only to an interested party</h3>
-<p>Some avenues live mostly on vendor roadmaps, press-release figures, or claims that
-have not been independently reproduced. Record them — but mark the provenance plainly:</p>
-<div class="reported">
-<span class="tag">REPORTED</span><b>Non-independent source:</b> NAME THE INTERESTED-PARTY SOURCE and state plainly it is not independently reproduced. Give the mundane candidate explanation with at least equal prominence (or state that none has been identified). This is recorded for completeness; it is NOT the author's claim, and it gets no vote on any other claim's status.
-</div>
+<p><b>Kangas, O., Jauhiainen, S., Simanainen, M., Ylikännö, M. (eds.) (2020).</b> Evaluation of the Finnish basic income experiment. Ministry of Social Affairs and Health, Reports 2020:15, ISBN 978-952-00-9890-2. Final report of the 2017–18 RCT: 2,000 unemployed recipients of €560/month; small employment effects, clear wellbeing gains, year-two confound from the activation-model reform disclosed.</p>
 
-<h2><span class="num">04</span>WHAT WOULD SETTLE THE OPEN QUESTIONS</h2>
+<p><b>Banerjee, A., Faye, M., Krueger, A., Niehaus, P., Suri, T. (2023).</b> Universal Basic Income: Short-Term Results from a Long-Term Experiment in Kenya. NBER Working Paper (number TO-VERIFY). About 23,000 treated adults across lump-sum, 2-year, and 12-year transfer arms; no work disincentive; shift toward enterprise formation.</p>
 
-<p>For each open avenue, spell out the specific result, measurement, or signpost that
-would move it from open to established. This is what turns a survey from a snapshot into
-an instrument: a reader knows exactly what work is worth doing next, and your OPEN claims
-become standing invitations with named credit attached.</p>
+<p><b>West, S., Castro Baker, A. (2021).</b> SEED first-year findings. Stockton Economic Empowerment Demonstration (stocktondemonstration.org; no DOI). $500/month, n=125; full-time employment 28%→40% versus 32%→37% control.</p>
 
-<h2><span class="num">05</span>SYNTHESIS</h2>
+<p><b>Jones, D., Marinescu, I. (2022).</b> The Labor Market Impacts of Universal and Permanent Cash Transfers: Evidence from the Alaska Permanent Fund. AEJ: Economic Policy 14(2), 315–340. DOI 10.1257/pol.20190299. Synthetic-control study: no aggregate employment effect; part-time work +1.8pp; general-equilibrium offset interpretation.</p>
 
-<p>Pull the landscape together: which avenues are solid, which are live bets, which are
-mostly noise, and what the honest shape of the field is once every claim wears its true
-label. Close on the line you want to leave the reader with.</p>
+<p><b>Weyl, E.G., Posner, E. (2018).</b> Radical Markets. Princeton University Press. Source of the COST/Harberger mechanism and its efficiency trade-off analysis.</p>
 
-<p class="punch">End with the line your readers should carry away.</p>
+<p><b>Siddarth, D. et al. (2020).</b> Who Watches the Watchmen? Sybil-resistance in Proof of Personhood Protocols. arXiv:2008.05300. Comparative review including Duniter's web-of-trust design.</p>
+
+<p><b>Avanzo, S. et al. (2025).</b> Impact of a Blockchain-based UBI Pilot: the case of Circles UBI. arXiv:2504.02714. Berlin pilot post-mortem: token accumulation versus merchant-network attrition; abrupt 2023 shutdown.</p>
+
+<p><b>Papadimitropoulos, V. et al. (2024).</b> Universal basic income on blockchain: the case of Circles UBI. Frontiers in Blockchain. DOI 10.3389/fbloc.2024.1362939. Failure analysis; UBI-on-chain insufficient absent a production/acceptance model.</p>
+
+<p><b>Lesaege, C. (2022).</b> Making sense of recent drama in Proof of Humanity. Medium. REPORTED — interested-party post-mortem; documents the cooperative's UBI-token loss and the registry fork conflict.</p>
+
+<p><b>EIP-5320 (2022).</b> Ethereum Improvement Proposal for NFTs under continuous self-assessed (Harberger) taxation (status TO-VERIFY).</p>
+
+<p><b>Industry RWA trackers (2026).</b> Tokenized RWA about $32B mid-2026; Treasuries about $15B; real estate about $0.2B; retail-access and regulatory-framework gaps. REPORTED grade (BeInCrypto "Real State of Tokenization in 2026"; rwa.xyz), pending triangulation.</p>
+
+<p><b>Duniter/Ğ1 documentation and Laborde, S. (2010), Relative Theory of Money.</b> Project sources for web-of-trust parameters and Universal Dividend calibration; REPORTED where uncorroborated.</p>
+
+<p><b>Grassroots Economics / Sarafu documentation.</b> Kenyan community-currency deployments with demurrage-adjacent mechanics; REPORTED grade pending independent literature (cite TO-VERIFY).</p>
 <!--/slot:body-->
 <!--slot:cites-->
-<!-- cite fields. who: "Author et al. (Year)". what: 1-2 sentence plain-language summary of what it showed + why it matters. src: "Journal Vol, Page (Year), DOI/arXiv". Re-state fresh per chapter; never back-reference. -->
+<!-- No interactive cite chips in this edition: Part I uses inline parenthetical citations with a full References section in the body. Populate #cites-data and switch to data-c chips if/when the blueprint edition wants tappable citations. -->
 <script type="application/json" id="cites-data">
-{ "ref1": { "who": "Author et al. (Year)", "what": "Plain-language summary of what it showed and why it matters — to be filled during prior-art recon.", "src": "Venue, Vol, Page (Year), DOI/arXiv" },
-  "ref2": { "who": "Author et al. (Year)", "what": "Plain-language summary of what it showed and why it matters — to be filled during prior-art recon.", "src": "Venue, Vol, Page (Year), DOI/arXiv" } }
+{}
 </script>
 <!--/slot:cites-->
 <!--slot:foot-->
@@ -134,7 +109,7 @@ label. Close on the line you want to leave the reader with.</p>
 
 <footer>
   <b>About this edition:</b> this page is the complete survey in self-explaining form — the avenue <a href="#landscape">landscape</a> and the consistency console up top, the narrative below. This live edition is the paper. The <a href="dossier.html">audit trail</a> carries the citation audit and the receipts.
-  <br><br><span class="mono">An Open Dossier · CC BY 4.0 · AI-assistance: @@AI-USE NOTE@@ and state your actual review basis · every verification label is true</span>
+  <br><br><span class="mono">An Open Dossier · CC BY 4.0 · AI-assistance: drafted, typeset, and citation-formatted with Claude (Anthropic); the author reviews by consistency and reality checks on end results, not line-by-line re-derivation · every verification label is true</span>
 </footer>
 
 <!--/slot:foot-->

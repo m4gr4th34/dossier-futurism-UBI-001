@@ -133,18 +133,21 @@ surfaces (the self-explaining front door and the audit trail), its manuscript, i
 verification script, and its claim ledger all live here.
 
 ## Standing context (edit per dossier)
-- Open claims: None formally entered yet — to be built during prior-art recon.
-  Anticipated structure: the ESTABLISHED bucket will hold (a) documented
-  crypto-UBI attempts and their measured outcomes (Worldcoin/WLD, GoodDollar,
-  Circles UBI, Proof of Humanity's UBI token, Duniter/Ğ1 and the Relative Theory
-  of Money), (b) empirical UBI pilot results on labor supply (Finland 2017–18,
-  GiveDirectly Kenya, Stockton SEED, Alaska Permanent Fund studies), and (c) the
-  sybil-resistance problem as the binding technical constraint on any per-person
-  token issuance. The central OPEN-UNVERIFIED claim will be that protocol-level
-  monetary levers (issuance schedules, demurrage, fee recycling) can sustain the
-  UBI's real purchasing power without collapsing the token's value or work
-  incentives. The asset-redistribution mechanism will be the dossier's
-  EXPLORATORY-CONJECTURE.
+- Open claims: 12 claims entered 2026-07-29 (C01–C12) in claim_ledger.csv,
+  none yet verified. The citation-backed rows (C01–C03, C05, C11, C12) sit at
+  status OPEN pending this dossier's own citation audit — they become ESTABLISHED
+  only when that audit re-checks them. Author judgments C04, C06, C07 and the
+  central challenge C08 are OPEN-UNVERIFIED. The asset-redistribution mechanism is
+  split: C09 is EXPLORATORY-CONJECTURE (the synthesis) and C10 is NOVEL /
+  TO-OUR-KNOWLEDGE (nothing published couples non-currency asset redistribution to
+  a per-person dividend with a stability analysis + attack surface), with the
+  search scope and date recorded in C10's verifier field (prior-art search
+  2026-07-29, ~12 English-language web searches; a deeper SSRN/NBER + French
+  monnaie-libre pass is still owed). The buckets, as entered: documented crypto-UBI
+  attempts and outcomes (Worldcoin/WLD, GoodDollar, Circles UBI, Proof of
+  Humanity's UBI token, Duniter/Ğ1 and the Relative Theory of Money), UBI pilot
+  labor-supply results (Finland 2017–18, GiveDirectly Kenya, Stockton SEED, Alaska
+  PFD), and sybil resistance as the binding constraint.
 - Open red-team findings: None yet — adversarial pass comes after the first draft.
 - Anything a fresh session must know:
   - Framing discipline (critical): This topic sits at the intersection of two
@@ -202,6 +205,27 @@ verification script, and its claim ledger all live here.
     publishable, defensible spine is the honest separation of what pilots and
     deployed projects have demonstrated from what this design would still have to
     prove.
+  - Two-phase structure (as built): the dossier is Part I (the prior-art survey,
+    committed 2026-07-29) with a RESERVED SLOT for Part II (the candidate
+    blueprint) that lands ABOVE Part I when drafted. Part I is written
+    self-contained by design — it must survive being pushed down and later frozen
+    as its own DOI'd chapter, so it back-references nothing. The reserved slot is
+    an HTML comment in editions/index.source.html between the premise and Part I.
+  - Novelty-claim gate: the deeper novelty search (SSRN/NBER + the French
+    monnaie-libre corpus) is REQUIRED before C10 is asserted in any blueprint
+    prose. Until then C10 stays NOVEL / TO-OUR-KNOWLEDGE with its search scope and
+    date in the verifier field; do not upgrade it on the strength of the first
+    ~12-search pass alone.
+  - C08 success criteria: when the blueprint finalizes the central challenge, its
+    quantitative success criteria MUST include all four legs — a purchasing-power
+    criterion, a scale criterion, velocity/sink data, and a labor-market criterion.
+    A criterion set missing any of these is incomplete.
+  - The six design constraints in Part I §7 (demand before distribution; no naked
+    streaming issuance; identity layer firewalled from money-layer governance;
+    demurrage only inside a captive-demand loop; a purchasing-power target requires
+    an endowment; the asset mechanism answers the tax-base problem) are BINDING on
+    the blueprint — each was extracted from a documented failure and any design
+    that violates one must say so and defend it.
 
 ## Geography (three layers)
 1. **GitHub = the truth.** The synced repo is the canonical state.
