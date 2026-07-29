@@ -127,16 +127,81 @@ labeled one is not.**
   resolves it true or refuted.
 
 ## What this project is
-The strategy room for **Dossier [NNN / short-name]: [ONE-LINE TOPIC]**.
+The strategy room for **Dossier Futurism-001 — Protocol-Native UBI: Can a cryptocurrency embed a universal basic income with monetary levers that preserve work incentives — and what would it take to extend redistribution beyond currency to real assets?**.
 Connected repo: this synced repository. The dossier's two reading
 surfaces (the self-explaining front door and the audit trail), its manuscript, its
 verification script, and its claim ledger all live here.
 
 ## Standing context (edit per dossier)
-- [List this dossier's open claims by ledger id.]
-- [List current open red-team findings.]
-- [Note anything a fresh session must know: the topic's sensitivities, the
-  key prior work, the boldest claims and exactly how they're labeled.]
+- Open claims: None formally entered yet — to be built during prior-art recon.
+  Anticipated structure: the ESTABLISHED bucket will hold (a) documented
+  crypto-UBI attempts and their measured outcomes (Worldcoin/WLD, GoodDollar,
+  Circles UBI, Proof of Humanity's UBI token, Duniter/Ğ1 and the Relative Theory
+  of Money), (b) empirical UBI pilot results on labor supply (Finland 2017–18,
+  GiveDirectly Kenya, Stockton SEED, Alaska Permanent Fund studies), and (c) the
+  sybil-resistance problem as the binding technical constraint on any per-person
+  token issuance. The central OPEN-UNVERIFIED claim will be that protocol-level
+  monetary levers (issuance schedules, demurrage, fee recycling) can sustain the
+  UBI's real purchasing power without collapsing the token's value or work
+  incentives. The asset-redistribution mechanism will be the dossier's
+  EXPLORATORY-CONJECTURE.
+- Open red-team findings: None yet — adversarial pass comes after the first draft.
+- Anything a fresh session must know:
+  - Framing discipline (critical): This topic sits at the intersection of two
+    hype-saturated fields, crypto and UBI, each with its own ideological tribes.
+    The dossier's credibility depends on refusing both cheerleading and
+    dismissal. State plainly as ESTABLISHED, with sources: crypto-UBI projects
+    exist and have shipped; UBI pilots show small-to-null labor-supply effects in
+    the studied contexts; and no existing project has solved sybil resistance,
+    purchasing-power stability, and adoption simultaneously. That is bedrock. But
+    "a protocol can deliver a functioning UBI at scale" is NOT established
+    anywhere on Earth and must stay OPEN-UNVERIFIED, with the specific falsifiable
+    success criteria spelled out (e.g., sustained real purchasing power of the
+    dividend over N years at M active verified users, with measurable velocity and
+    sink data). Truth in labeling cuts both ways: don't soft-pedal the real
+    empirical pilot results, and don't assert tokenomics-whitepaper claims as
+    demonstrated.
+  - The three design pillars and their epistemic status: (1) Per-person issuance
+    requires proof-of-personhood — treat competing approaches (biometric à la
+    Worldcoin, social-graph à la Circles/Duniter, court-based à la Proof of
+    Humanity) as ESTABLISHED-with-caveats on their documented failure modes.
+    (2) Monetary levers — demurrage (Freicoin/Gesell lineage), adaptive issuance,
+    transaction-fee recycling — are ESTABLISHED as mechanisms that exist,
+    OPEN-UNVERIFIED as tools that achieve stimulus without hyperinflation of the
+    UBI unit. (3) Work incentives — anchor on the pilot evidence (modest labor
+    effects at modest transfer sizes) and label extrapolation to full living-wage
+    UBI as OPEN-UNVERIFIED; the pilots don't reach that regime.
+  - The hardest problem, handled honestly: redistribution of non-currency assets
+    (equities, property) through a currency protocol. No deployed system does
+    this. The dossier's design contribution here — e.g., Harberger-tax-style
+    self-assessed levies on tokenized assets (Weyl/Posner "Radical Markets"
+    lineage), demurrage on tokenized property, or protocol treasuries acquiring
+    real-world-asset tokens to back the dividend (sovereign-wealth model,
+    Alaska/Norway analogy) — is EXPLORATORY-CONJECTURE, full stop. The prior art
+    (Harberger taxation, land value tax, RWA tokenization status) is ESTABLISHED;
+    the synthesis is not. Framing it as an open design challenge with named
+    failure modes (capital flight, oracle/valuation attacks, legal enforceability
+    of on-chain claims to off-chain property) is what makes it serious rather than
+    utopian.
+  - Model to emulate: publish the economics like a mechanism-design paper, not a
+    token whitepaper. Every lever gets a named failure mode next to it. The
+    stability analysis should be attackable by an economist and survive.
+  - Key prior work to map in recon: Worldcoin's documentation and independent
+    critiques; GoodDollar's reserve model; Circles UBI post-mortems; Duniter/Ğ1
+    and the Relative Theory of Money; Freicoin/demurrage literature; the major UBI
+    pilot papers (Finland final report, GiveDirectly RCTs, SEED); Alaska Permanent
+    Fund labor studies; Weyl & Posner on Harberger taxes; current state of
+    real-world-asset tokenization. Treat token-price speculation content and
+    advocacy-org material as adjacent-at-best and flag it.
+  - The boldest claims and their labels: "a protocol-native UBI with adaptive
+    monetary levers can sustain real purchasing power while preserving work
+    incentives" → OPEN-UNVERIFIED, posted as an open challenge with quantitative
+    success criteria. "Non-currency assets can be brought into the redistribution
+    loop via tokenization plus Harberger-style mechanisms" → EXPLORATORY-CONJECTURE,
+    presented as a design proposal with its attack surface enumerated. The
+    publishable, defensible spine is the honest separation of what pilots and
+    deployed projects have demonstrated from what this design would still have to
+    prove.
 
 ## Geography (three layers)
 1. **GitHub = the truth.** The synced repo is the canonical state.
