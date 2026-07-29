@@ -1,0 +1,230 @@
+{
+  "generated_by": "verification/flow_model.py",
+  "warning": "GENERATED from flow_model.py — regenerate with `python verification/flow_model.py`, never hand-edit.",
+  "constants": {
+    "tau_min": 0.005,
+    "tau_max": 0.05,
+    "tau_evasion_threshold": 0.03,
+    "y": 0.015,
+    "rho": 0.2,
+    "tau_eval": 0.02,
+    "frontier_tau": [
+      0.01,
+      0.02,
+      0.03
+    ]
+  },
+  "tiers": [
+    {
+      "key": "poverty-relevant",
+      "d": 270,
+      "anchor": "GiveDirectly transfer scale (~$270/yr)"
+    },
+    {
+      "key": "floor",
+      "d": 2000,
+      "anchor": "Alaska-dividend / global-wealth-ceiling scale"
+    },
+    {
+      "key": "living-wage",
+      "d": 10000,
+      "anchor": "jurisdiction-indexed living wage"
+    }
+  ],
+  "frontier": {
+    "w_per_p": [
+      100.0,
+      137.2597,
+      188.4021,
+      258.6001,
+      354.9537,
+      487.2082,
+      668.7403,
+      917.9107,
+      1259.921,
+      1729.3633,
+      2373.7182,
+      3258.1576,
+      4472.136,
+      6138.4386,
+      8425.5999,
+      11564.9497,
+      15874.0105,
+      21788.6128,
+      29906.9756,
+      41050.2128,
+      56345.3823,
+      77339.4797,
+      106155.9064,
+      145709.2354,
+      200000.0
+    ],
+    "curves": [
+      {
+        "tau": 0.01,
+        "d": [
+          1.0,
+          1.372597,
+          1.884021,
+          2.586001,
+          3.549537,
+          4.872082,
+          6.687403,
+          9.179107,
+          12.59921,
+          17.293633,
+          23.737182,
+          32.581576,
+          44.72136,
+          61.384386,
+          84.255999,
+          115.649497,
+          158.740105,
+          217.886128,
+          299.069756,
+          410.502128,
+          563.453823,
+          773.394797,
+          1061.559064,
+          1457.092354,
+          2000.0
+        ]
+      },
+      {
+        "tau": 0.02,
+        "d": [
+          2.0,
+          2.745194,
+          3.768042,
+          5.172002,
+          7.099074,
+          9.744164,
+          13.374806,
+          18.358214,
+          25.19842,
+          34.587266,
+          47.474364,
+          65.163152,
+          89.44272,
+          122.768772,
+          168.511998,
+          231.298994,
+          317.48021,
+          435.772256,
+          598.139512,
+          821.004256,
+          1126.907646,
+          1546.789594,
+          2123.118128,
+          2914.184708,
+          4000.0
+        ]
+      },
+      {
+        "tau": 0.03,
+        "d": [
+          3.0,
+          4.117791,
+          5.652063,
+          7.758003,
+          10.648611,
+          14.616246,
+          20.062209,
+          27.537321,
+          37.79763,
+          51.880899,
+          71.211546,
+          97.744728,
+          134.16408,
+          184.153158,
+          252.767997,
+          346.948491,
+          476.220315,
+          653.658384,
+          897.209268,
+          1231.506384,
+          1690.361469,
+          2320.184391,
+          3184.677192,
+          4371.277062,
+          6000.0
+        ]
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "name": "Ring 1-2 today",
+      "W": 1000000000.0,
+      "P": 1000000,
+      "w_per_p": 1000.0,
+      "tau": 0.02,
+      "d_sustained": 20.0,
+      "d_firstyear": 16.0,
+      "tier": "symbolic"
+    },
+    {
+      "name": "Ring 1-2 stretch",
+      "W": 5000000000.0,
+      "P": 100000,
+      "w_per_p": 50000.0,
+      "tau": 0.02,
+      "d_sustained": 1000.0,
+      "d_firstyear": 800.0,
+      "tier": "poverty-relevant"
+    },
+    {
+      "name": "Global median wealth",
+      "W": null,
+      "P": null,
+      "w_per_p": 8000,
+      "tau": 0.02,
+      "d_sustained": 160.0,
+      "d_firstyear": 128.0,
+      "tier": "symbolic"
+    },
+    {
+      "name": "Global mean wealth",
+      "W": null,
+      "P": null,
+      "w_per_p": 100000,
+      "tau": 0.02,
+      "d_sustained": 2000.0,
+      "d_firstyear": 1600.0,
+      "tier": "floor",
+      "note": "ceiling row; mean-wealth source TO-VERIFY in citation_audit.md"
+    }
+  ],
+  "finding": {
+    "headline": "At tau=2%, every $50k of wrapped assets per member yields $1,000/yr (tau*W/P); the global-mean-wealth ceiling is ~$2,000/yr; the living-wage tier is unreachable from levies alone at any tau <= 5%.",
+    "rings12": "poverty-relevant at bounded membership, symbolic at scale",
+    "floor_requires": "Ring-3 scale (the minimal leviathan)",
+    "living_wage": "arithmetically unreachable from redistribution alone at any survivable tau; the commons itself must grow",
+    "per_scenario": {
+      "Ring 1-2 today": "symbolic",
+      "Ring 1-2 stretch": "poverty-relevant",
+      "Global median wealth": "symbolic",
+      "Global mean wealth": "floor"
+    }
+  },
+  "console_checks": [
+    {
+      "label": "C13 conservation: model outputs recompute exactly from raw inputs (0 mismatches)",
+      "computed": 0,
+      "lo": 0,
+      "hi": 0
+    },
+    {
+      "label": "C13 scaling: tau=2%, $50k wrapped/member -> $1,000/yr levy and $800 first-year net; both quoted in the manuscript",
+      "computed": 1000,
+      "lo": 1000,
+      "hi": 1000
+    },
+    {
+      "label": "C13 ceiling: tau=2%, global-mean $100k/member -> $2,000/yr; quoted in the manuscript",
+      "computed": 2000,
+      "lo": 2000,
+      "hi": 2000
+    }
+  ]
+}

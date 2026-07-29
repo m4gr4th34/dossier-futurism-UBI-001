@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+"""
+flow_model.test.py — lockstep guard for the C13 model / figure / manuscript single source.
+
+Asserts that the commonwealth-engine figure's embedded data (constants, tiers, scenarios)
+was GENERATED FROM commonwealth_model.json and never hand-drifted, and that the model JSON
+is internally consistent (frontier and scenario dividends equal tau * W/P). Stdlib-only,
+fail-loud (non-zero exit on any mismatch); discovered + run by run_tests.js.
+"""
+import json
+import os
+import re
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+MODEL = os.path.join(HERE, "commonwealth_model.json")
+SRC = os.path.join(ROOT, "editions", "index.source.html")
+
+fails = 0
+
+
+def check(name, cond):
+    global fails
+    print(("  PASS  " if cond else "  FAIL  ") + name)
+    if not cond:
+        fails += 1
+
+
+def approx(a, b, eps=1e-6):
+    return abs(a - b) <= eps
+
+
+def engine_spec(src):
+    """Extract the commonwealth-engine figure's data-figure JSON from the source."""
+    for m in re.finditer(r"data-figure='([^']*)'", src):
+        raw = m.group(1)
+        if '"type":"commonwealth-engine"' in raw or '"type": "commonwealth-engine"' in raw:
+            return json.loads(raw)
+    return None
+
+
+def main():
+    with open(MODEL, encoding="utf-8") as f:
+        M = json.load(f)
+    with open(SRC, encoding="utf-8") as f:
+        src = f.read()
+    spec = engine_spec(src)
+
+    print("flow_model.test: lockstep — figure spec vs commonwealth_model.json")
+    check("commonwealth-engine figure found in the source", spec is not None)
+    if spec is None:
+        print("\n1 FAILURE(S).")
+        return 1
+
+    # (1) constants lockstep — the figure embeds y, rho, tau_eval; they MUST equal the model's.
+    mc = M["constants"]
+    sc = spec.get("constants", {})
+    for k in ("y", "rho", "tau_eval"):
+        check("spec.constants." + k + " == model.constants." + k,
+              k in sc and approx(sc[k], mc[k]))
+
+    # (2) tiers lockstep — thresholds match the model, in order.
+    m_tiers = [t["d"] for t in M["tiers"]]
+    s_tiers = [t["d"] for t in spec.get("tiers", [])]
+    check("spec tier thresholds == model tier thresholds", s_tiers == m_tiers)
+
+    # (3) scenarios lockstep — each spec dot's (w, d) matches a model scenario, and d == tau_eval*w.
+    tau_eval = mc["tau_eval"]
+    m_by_w = {round(s["w_per_p"], 6): round(s["d_sustained"], 6) for s in M["scenarios"]}
+    for s in spec.get("scenarios", []):
+        w = round(s["w"], 6)
+        check("scenario w=%g present in model" % w, w in m_by_w)
+        if w in m_by_w:
+            check("scenario w=%g: spec d==model d" % w, approx(s["d"], m_by_w[w]))
+            check("scenario w=%g: d == tau_eval*w" % w, approx(s["d"], tau_eval * w))
+
+    # (4) model internal consistency — frontier points are exactly tau*w.
+    ok_frontier = True
+    for cur in M["frontier"]["curves"]:
+        tau = cur["tau"]
+        for w, d in zip(M["frontier"]["w_per_p"], cur["d"]):
+            if not approx(d, round(tau * w, 6)):
+                ok_frontier = False
+    check("model frontier: every d == tau*w", ok_frontier)
+
+    print("\n" + ("%d FAILURE(S)." % fails if fails else "all lockstep checks passed."))
+    return 1 if fails else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

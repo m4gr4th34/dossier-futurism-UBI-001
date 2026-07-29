@@ -89,6 +89,28 @@ audited state.
    TO-VERIFY; do not assert the review as verified.
    *Backs:* Part II Ring 3 (the jurisdiction requirement / minimal-leviathan claim).
 
+9. **Global mean / median wealth per adult — source + year + figures `TO-VERIFY`.**
+   The flow-of-funds model (C13) uses ~$100,000 as global-mean wealth per adult (the
+   ceiling scenario) and ~$8,000 as global-median (a scale scenario). Pin these to the
+   UBS Global Wealth Report (formerly Credit Suisse) — exact year and figures — or grade
+   the two global-wealth scenario points REPORTED. Until resolved they are model inputs,
+   not asserted facts; the "Global mean wealth" scenario row already carries a
+   TO-VERIFY note.
+   *Backs:* C13 / C15 (the $2,000/yr floor-tier ceiling rests on the mean-wealth figure).
+
+10. **GiveDirectly $270/yr transfer-scale anchor — cross-check.**
+    The poverty-relevant tier ($270/yr, C15) is anchored to GiveDirectly's transfer
+    magnitude. Cross-check the actual per-recipient annual transfer in the Kenya RCT
+    (cf. Part I C05 / the Banerjee et al. NBER paper, open item 1) and confirm the
+    anchor is in the right order of magnitude, or restate the anchor.
+    *Backs:* C15 (poverty-relevant tier threshold).
+
+11. **Alaska Permanent Fund recent-dividend magnitude — cross-check.**
+    The floor tier ($2,000/yr, C15) is anchored partly to the Alaska dividend scale.
+    Confirm the recent annual PFD amount (cf. Part I C05 / Jones & Marinescu, which cites
+    ~$2,000/person recently) supports the anchor.
+    *Backs:* C15 (floor tier threshold).
+
 ## Closing the audit
 
 When an item resolves, update the associated ledger row's status (OPEN →

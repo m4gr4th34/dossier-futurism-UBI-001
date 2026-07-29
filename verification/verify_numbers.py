@@ -86,9 +86,82 @@ check("Consistency: every FORECAST has a dated signpost", with_signpost, _expect
 # (3) All forecast probabilities lie in [PCT_MIN, PCT_MAX].
 check(f"Consistency: all forecast probabilities lie in [{PCT_MIN},{PCT_MAX}]", out_of_range, 0, 0)
 
-# TODO: add your survey's real cross-avenue / arithmetic checks here,
-# mirroring whatever you add to buildChecks() in index.html. Same rule:
-# never widen a tolerance to make a failing check pass — fix the paper.
+# ----------------------------------------------------------------
+# FLOW-OF-FUNDS CHECKS (#4-#6) — the executable verifier for claim C13.
+# The model lives in verification/flow_model.py, which writes commonwealth_model.json;
+# these checks RE-DERIVE the headline numbers from raw inputs and assert the JSON
+# (and the manuscript that quotes it) agree. Fix the model or the paper, never the
+# tolerance — the point checks are exact equalities.
+#
+# --avenues contract: resolve the model JSON and the manuscript RELATIVE to the
+# avenues directory, so a frozen chapter verified against its OWN sealed avenues.json
+# uses its OWN sealed model/manuscript, never the live root's. Falls back to the
+# working-draft locations. If no model JSON is found (a chapter that never sealed one),
+# the flow checks are skipped with a note — the 3 consistency checks still run.
+# ----------------------------------------------------------------
+AVENUES_DIR = os.path.dirname(AVENUES_PATH)
+_model_candidates = [
+    os.path.join(AVENUES_DIR, "verification", "commonwealth_model.json"),
+    os.path.join(AVENUES_DIR, "commonwealth_model.json"),
+    os.path.join(HERE, "commonwealth_model.json"),
+]
+MODEL_PATH = next((p for p in _model_candidates if os.path.exists(p)), None)
+_src_candidates = [
+    os.path.join(AVENUES_DIR, "editions", "index.source.html"),
+    os.path.join(HERE, os.pardir, "editions", "index.source.html"),
+]
+SRC_PATH = next((p for p in _src_candidates if os.path.exists(p)), None)
+
+if MODEL_PATH is None:
+    print("\n[note] no commonwealth_model.json found — skipping flow-of-funds checks #4-#6.")
+else:
+    with open(MODEL_PATH, encoding="utf-8") as f:
+        M = json.load(f)
+    cst = M["constants"]
+    rho, tau_eval = cst["rho"], cst["tau_eval"]
+    manuscript = ""
+    if SRC_PATH:
+        with open(SRC_PATH, encoding="utf-8") as f:
+            manuscript = f.read()
+
+    def d_sustained(w):  # full levy flow per member (perpetual ceiling; rho=0 limit)
+        return round(tau_eval * w, 6)
+
+    def d_firstyear(w):  # year-one payout, before the treasury compounds
+        return round((1.0 - rho) * tau_eval * w, 6)
+
+    EPS = 1e-6  # float-equality hygiene, NOT a claim tolerance (values are exact integers)
+
+    # (#4) conservation: every scenario's stored outputs must recompute from raw inputs,
+    #      and the absolute-budget rows must satisfy dividend_budget/P == d_firstyear.
+    mismatches = 0
+    for s in M["scenarios"]:
+        w = s["w_per_p"]
+        if abs(d_sustained(w) - s["d_sustained"]) > EPS: mismatches += 1
+        if abs(d_firstyear(w) - s["d_firstyear"]) > EPS: mismatches += 1
+        if s.get("W") and s.get("P"):
+            budget_fy = (1.0 - rho) * tau_eval * s["W"]   # T(0)=0, so budget is the levy payout
+            if abs(budget_fy / s["P"] - s["d_firstyear"]) > EPS: mismatches += 1
+    check("C13 conservation: model outputs recompute exactly from raw inputs (0 mismatches)",
+          mismatches, 0, 0)
+
+    # (#5) scaling spot-check: at tau=2%, W/P=$50k -> $1,000/yr full levy (tau*W/P) and
+    #      $800/yr first-year net ((1-rho)*tau*W/P); the prose must quote BOTH.
+    d_sus_50k, d_fy_50k = d_sustained(50_000), d_firstyear(50_000)
+    poison5 = 0
+    if abs(d_fy_50k - 800) > EPS: poison5 += 1
+    if abs(d_sus_50k - 1000) > EPS: poison5 += 1
+    if "$1,000" not in manuscript: poison5 += 10
+    if "$800" not in manuscript: poison5 += 10
+    check("C13 scaling: tau=2%, $50k wrapped/member -> $1,000/yr levy and $800 first-year net; both quoted in the manuscript",
+          d_sus_50k + poison5, 1000, 1000)
+
+    # (#6) ceiling: at tau=2%, W/P=$100k (global mean) -> $2,000/yr; the prose must quote it.
+    d_sus_100k = d_sustained(100_000)
+    poison6 = 0
+    if "$2,000" not in manuscript: poison6 += 10
+    check("C13 ceiling: tau=2%, global-mean $100k/member -> $2,000/yr; quoted in the manuscript",
+          d_sus_100k + poison6, 2000, 2000)
 
 # ----------------------------------------------------------------
 print()

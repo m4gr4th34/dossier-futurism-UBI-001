@@ -133,10 +133,20 @@ surfaces (the self-explaining front door and the audit trail), its manuscript, i
 verification script, and its claim ledger all live here.
 
 ## Standing context (edit per dossier)
-- Open claims: 13 claims entered 2026-07-29 (C01–C13) in claim_ledger.csv,
-  none yet verified. C13 (added with Part II) is the Commonwealth Protocol's
-  falsifiable core — type EST, status OPEN-UNVERIFIED, verified by a pending
-  flow-of-funds model (which becomes a verify_numbers check once parameterized).
+- Open claims: 15 claims entered 2026-07-29 (C01–C15) in claim_ledger.csv,
+  none yet verified. C13 (the Commonwealth Protocol's falsifiable core, EST) is now
+  EXECUTABLE-VERIFIED AS A MODEL — the flow-of-funds model lives in
+  verification/flow_model.py, writes commonwealth_model.json, and is re-checked from
+  raw inputs by verify_numbers.py #4–#6; its status stays OPEN-UNVERIFIED because a
+  model is a model, not reality. C14 (model parameter ranges — τ, y, ρ — are author
+  engineering judgments) and C15 (the $270 / $2,000 / $10,000 success tiers are
+  author-chosen, anchored to cited magnitudes) are the two new EST / OPEN-UNVERIFIED
+  rows those judgments live in. Recorded finding (model output under stated
+  assumptions): at τ=2%, $50k wrapped/member yields $1,000/yr ($800 first-year net);
+  the global-mean-wealth ceiling is ~$2,000/yr (the floor tier); a living wage is
+  unreachable from levies alone at any τ ≤ 5% — Rings 1–2 buy a poverty-relevant
+  dividend at bounded membership, a universal floor needs Ring-3 scale, and beyond a
+  floor the commons itself must grow.
   The citation-backed rows (C01–C03, C05, C11, C12) sit at
   status OPEN pending this dossier's own citation audit — they become ESTABLISHED
   only when that audit re-checks them. Author judgments C04, C06, C07 and the
@@ -214,13 +224,18 @@ verification script, and its claim ledger all live here.
     entirely as EXPLORATORY-CONJECTURE: a four-layer stack (firewalled personhood
     registry / zero-issuance treasury / covenant wrapper with a Weyl–Zhang
     depreciating-license levy / chartalist demand loop), an entry-by-rings adoption
-    path, one falsifiable core (C13), a six-item attack surface, and three living
-    figures (types commonwealth-stack/-loop/-rings in figures/commonwealth.js).
-    Part I remains self-contained by design — it back-references nothing and must
-    survive being pushed down and later frozen as its own DOI'd chapter.
-  - Next work items before ANY status changes: (1) the flow-of-funds
-    parameterization that turns C13 from prose into a real verify_numbers check
-    (τ, W, v, N, M made concrete); (2) the deeper novelty search. Neither is done.
+    path, one falsifiable core (C13), a six-item attack surface, and FOUR living
+    figures (commonwealth-stack/-loop/-rings and the commonwealth-engine viability
+    frontier — a static poster with a live sliders+animated-loop renderer — in
+    figures/commonwealth.js). The engine figure's data is generated from
+    commonwealth_model.json (single source; a lockstep test, flow_model.test.py,
+    guards the figure spec against drift). Part I remains self-contained by design —
+    it back-references nothing and must survive being pushed down and later frozen as
+    its own DOI'd chapter.
+  - Next work item before ANY status changes: the deeper C10 novelty search
+    (SSRN/NBER + French monnaie-libre corpus). The flow-of-funds parameterization is
+    now DONE (flow_model.py + verify_numbers.py #4–#6), so C13 is executable-verified
+    as a model; the novelty search is the last gate owed before any status upgrade.
   - Novelty-claim gate: the deeper novelty search (SSRN/NBER + the French
     monnaie-libre corpus) is REQUIRED before C10 is asserted in any blueprint
     prose. It now has a PRECISE target — the exact closed loop Part II describes:

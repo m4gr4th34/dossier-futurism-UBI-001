@@ -502,6 +502,10 @@ document.querySelectorAll('.cite').forEach(btn=>{
 // ---------------------------------------------------------------
 let AVENUES = [];
 let RULES = {};
+// Optional dossier-supplied executable checks (e.g. a flow-of-funds model's console_checks),
+// loaded below if the dossier ships a commonwealth_model.json. Empty for a template/other
+// dossier -> the console shows only the consistency checks (unchanged behavior).
+let MODEL_CHECKS = [];
 
 const STATUS = {
   "ESTABLISHED":     {cls:"s-est",      tcls:"t-est"},
@@ -554,6 +558,9 @@ function buildChecks(){
   const expSign = signpostReq ? forecasts.length : withSignpost;
   c.push(["Consistency: every FORECAST has a dated signpost", withSignpost, [expSign, expSign]]);
   c.push(["Consistency: all forecast probabilities lie in ["+pctMin+","+pctMax+"]", outOfRange, [0, 0]]);
+  // Dossier-supplied executable checks (single-sourced from the model JSON's console_checks),
+  // so the Run button reflects the SAME total the baked verdict (verify_numbers.py) shows.
+  for (let i=0;i<MODEL_CHECKS.length;i++){ const mc=MODEL_CHECKS[i]; c.push([mc.label, mc.computed, [mc.lo, mc.hi]]); }
   return c;
 }
 
@@ -573,14 +580,22 @@ function renderLandscapeError(){
 // cards or let a fetch failure (file://) overwrite the baked floor.
 const baked = !!document.querySelector('#av-grid[data-baked]');
 if (document.getElementById('av-grid')) {
-fetch('avenues.json').then(r=>r.json()).then(d=>{
+// Load the avenue data (required) and, if the dossier ships one, the model's console_checks
+// (optional). Both feed buildChecks so the Run button matches the baked verdict.
+Promise.all([
+  fetch('avenues.json').then(r=>r.json()).catch(()=>null),
+  fetch('verification/commonwealth_model.json').then(r=>r.json()).catch(()=>null)
+]).then(function(res){
+  const d = res[0], m = res[1];
+  if(!d){ if(!baked) renderLandscapeError(); return; }
   AVENUES = Array.isArray(d.avenues) ? d.avenues : [];
   RULES   = d.checks || {};
+  MODEL_CHECKS = (m && Array.isArray(m.console_checks)) ? m.console_checks : [];
   if(!baked){
     renderCards();
     document.getElementById('ncheck').textContent = buildChecks().length;
   }
-}).catch(()=>{ if(!baked) renderLandscapeError(); });
+});
 
 runBtn.addEventListener('click', () => {
   runBtn.disabled = true; logEl.innerHTML = '';

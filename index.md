@@ -22,6 +22,8 @@ This document does not assume the answer is yes. It maps what has been tried, st
 
 This part composes the survivors of Part I into a single design. The organizing rule comes from history: voluntary levy systems survive when the obligation attaches to a benefit at one irrevocable entry point and is enforced by the asset itself thereafter — condominium covenants, Hanseatic dues — and they die when payment is a recurring choice: Freicoin's decaying token lost to non-decaying rivals, and the Articles of Confederation's unenforced requisitions killed the confederation in a decade. Part I's graveyard is this same failure six times over: distribution without demand.
 
+*(figure: The Commonwealth Protocol viability frontier: dividend per member versus wrapped wealth per member, with three success tiers and four scenarios — The whole proposal in one figure: the engine (loop) and its honest ceiling (frontier). Expand to explore.)*
+
 ### Four layers, one firewall
 
 *(figure: The Commonwealth Protocol: four layers, with a constitutional firewall isolating the personhood registry from the money layers — Layer 0 — the personhood registry — is firewalled from the money layers and holds exactly one right: the dividend. Layer 1 (the treasury) pays that dividend only from realized yield plus levy, never issuance; Layer 2 wraps assets under a low, banded depreciating-license levy; Layer 3 makes every covenant obligation payable only in the dividend token. Levy flows up into the treasury; the dividend is the one value permitted to cross the firewall to verified persons.)*
@@ -40,6 +42,14 @@ This part composes the survivors of Part I into a single design. The organizing 
 
 Asset holders must acquire the token each epoch to meet the levy; dividend recipients are the natural sellers. The UBI recipients become the levy-payers' counterparties by construction — structural flow, not speculation or goodwill. The token's floor is then a computable function of wrapped-asset value, levy rate, and velocity: an attackable claim, which is the point.
 
+### The arithmetic of the dream
+
+Strip the mechanism to its core and one variable dominates: **wrapped wealth per member** (W ⁄ P). A levy at rate τ, paid only in the dividend token and split across the membership, delivers a per-member dividend whose sustainable ceiling is simply `τ · W ⁄ P` — the full levy flow — while the first-year payout is `(1 − ρ) · τ · W ⁄ P`, since a share ρ is retained to compound the treasury, whose real yield y lifts the dividend in later years. Everything else is detail; the scale of the dream is set by how much wealth each member brings inside.
+
+Against that we set three success tiers — author-chosen thresholds (claim `C15`), each anchored to a cited magnitude rather than derived: **poverty-relevant** at $270/yr (GiveDirectly transfer scale), **floor** at $2,000/yr (Alaska-dividend / global-wealth-ceiling scale), and **living wage** at roughly $10,000/yr and up (jurisdiction-indexed).
+
+The model that turns this into arithmetic — its parameter ranges are engineering judgments, not empirical findings (claim `C14`: τ in a 0.5–3% viable band, real yield 1.5%, retention ρ 20%) — returns a blunt result, stated strictly as model output under those stated assumptions. At τ=2%, every $50,000 of wrapped assets per member yields **$1,000/yr** in full levy, of which about **$800** is paid out in the first year before the treasury compounds. So Rings 1–2 fund a *poverty-relevant* dividend at bounded membership (the hundred-thousand-member stretch case) or a merely *symbolic* one at population scale. A universal *floor* needs roughly global-mean wealth per member — about $100,000, a **$2,000/yr** ceiling — which is out of reach without Ring 3, the minimal leviathan. And a *living wage* from levies alone is arithmetically unreachable at any survivable τ: even 5% on mean global wealth is only $5,000/yr. The conclusion the arithmetic forces is narrow and honest — redistribution sets a floor; it does not manufacture a wage. For more than a floor, **the commons itself must grow**.
+
 ### Entry by rings — earning the way to property
 
 *(figure: Entry by rings: earning the way from protocol-native assets out to real property — Ring 1 (protocol-native assets — namespaces, blockspace, protocol land) enforces perfectly by code and bootstraps the system. Ring 2 (tokenized financial assets) enforces strongly via issuer covenants, drawn in by listing plus aggregated dividend-recipient demand. Ring 3 (real property) works only where a jurisdiction adopts the covenant — the minimal-leviathan ring. On-chain title has historically worked only where the state already worked (Georgia), not where it did not (Honduras).)*
@@ -48,7 +58,7 @@ The record forbids leading with real property: blockchain land registries succee
 
 ### The falsifiable core
 
-> **OPEN-UNVERIFIED** — **Open challenge (C13).** There exists a levy rate τ, wrapped-asset base W, and velocity v at which the dividend's real purchasing power is sustained over N years for M verified persons with zero issuance — and Rings 1–2 alone reach that region. The flow-of-funds model that parameterizes this becomes a mechanical check. If the model shows Ring 3 is load-bearing — that a minimal leviathan is required — the dossier reports that as its finding. Either answer is the result; the design cannot un-fail its own arithmetic.
+> **OPEN-UNVERIFIED** — **Open challenge (C13), now executable.** Universality here means universal *within the registry* — every verified member, no means test — not universal across humanity. The sharpened question: **which tier can Rings 1–2 reach, at what membership, sustained for N ≥ 5 years, with zero issuance?** The flow-of-funds model (`verification/flow_model.py`, checked by `verify_numbers.py` #4–#6) makes this a mechanical arithmetic rather than a promise — it already shows a universal floor needs Ring-3 scale, so if a jurisdiction-free Rings-1–2 deployment cannot clear the poverty-relevant tier at its membership, that refutes the strong form and the dossier reports it. Either answer is the result; the design cannot un-fail its own arithmetic. The first person to parameterize a real deployment and run it gets named credit.
 
 ### Attack surface, enumerated now
 
@@ -108,8 +118,11 @@ Results from `verification/verify_numbers.py` — the same checks the in-page co
 - [PASS] Consistency: at least one avenue in the landscape
 - [PASS] Consistency: every FORECAST has a dated signpost
 - [PASS] Consistency: all forecast probabilities lie in [0,100]
+- [PASS] C13 conservation: model outputs recompute exactly from raw inputs (0 mismatches)
+- [PASS] C13 scaling: tau=2%, $50k wrapped/member -> $1,000/yr levy and $800 first-year net; both quoted in the manuscript
+- [PASS] C13 ceiling: tau=2%, global-mean $100k/member -> $2,000/yr; quoted in the manuscript
 
-**TOTAL: 3 checks · 3 pass · 0 fail** — All checks pass — the survey is internally consistent.
+**TOTAL: 6 checks · 6 pass · 0 fail** — All checks pass — the survey is internally consistent.
 
 ## 01 Proof of personhood — the binding constraint
 
