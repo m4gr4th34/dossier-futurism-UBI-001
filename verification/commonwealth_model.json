@@ -199,41 +199,41 @@
       }
     },
     {
-      "name": "Global median wealth",
+      "name": "global median wealth (UBS 2022)",
       "W": null,
       "P": null,
-      "w_per_p": 8000,
+      "w_per_p": 8654,
       "tau": 0.02,
-      "d_sustained": 160.0,
-      "d_firstyear": 128.0,
+      "d_sustained": 173.08,
+      "d_firstyear": 138.464,
       "tier": "symbolic",
       "flow": {
-        "levy_paid": 160.0,
-        "levy_to_dividend": 128.0,
-        "levy_to_treasury": 32.0,
-        "treasury_per_member": 2133.333333,
-        "yield_component": 32.0,
-        "dividend_total": 160.0
+        "levy_paid": 173.08,
+        "levy_to_dividend": 138.464,
+        "levy_to_treasury": 34.616,
+        "treasury_per_member": 2307.733333,
+        "yield_component": 34.616,
+        "dividend_total": 173.08
       }
     },
     {
-      "name": "Global mean wealth",
+      "name": "global mean wealth (UBS 2024)",
       "W": null,
       "P": null,
-      "w_per_p": 100000,
+      "w_per_p": 95384,
       "tau": 0.02,
-      "d_sustained": 2000.0,
-      "d_firstyear": 1600.0,
-      "tier": "floor",
+      "d_sustained": 1907.68,
+      "d_firstyear": 1526.144,
+      "tier": "poverty-relevant",
       "flow": {
-        "levy_paid": 2000.0,
-        "levy_to_dividend": 1600.0,
-        "levy_to_treasury": 400.0,
-        "treasury_per_member": 26666.666667,
-        "yield_component": 400.0,
-        "dividend_total": 2000.0
+        "levy_paid": 1907.68,
+        "levy_to_dividend": 1526.144,
+        "levy_to_treasury": 381.536,
+        "treasury_per_member": 25435.733333,
+        "yield_component": 381.536,
+        "dividend_total": 1907.68
       },
-      "note": "ceiling row; mean-wealth source TO-VERIFY in citation_audit.md"
+      "note": "ceiling row; UBS mean wealth/adult ~$95,384 (2024, GWR 2025) -> ~$1,908/yr at tau=2%, just under the $2,000 floor tier"
     }
   ],
   "participation": {
@@ -278,15 +278,15 @@
     ]
   },
   "finding": {
-    "headline": "At tau=2%, every $50k of wrapped assets per member yields $1,000/yr (tau*W/P); the global-mean-wealth ceiling is ~$2,000/yr; the living-wage tier is unreachable from levies alone at any tau <= 5%.",
+    "headline": "At tau=2%, every $50k of wrapped assets per member yields $1,000/yr (tau*W/P); the global-mean-wealth ceiling is ~$1,908/yr (just under the $2,000 floor tier); the living-wage tier is unreachable from levies alone at any tau <= 5%.",
     "rings12": "poverty-relevant at bounded membership, symbolic at scale",
     "floor_requires": "Ring-3 scale (the minimal leviathan)",
     "living_wage": "arithmetically unreachable from redistribution alone at any survivable tau; the commons itself must grow",
     "per_scenario": {
       "Ring 1-2 today": "symbolic",
       "Ring 1-2 stretch": "poverty-relevant",
-      "Global median wealth": "symbolic",
-      "Global mean wealth": "floor"
+      "global median wealth (UBS 2022)": "symbolic",
+      "global mean wealth (UBS 2024)": "poverty-relevant"
     }
   },
   "console_checks": [
@@ -303,10 +303,10 @@
       "hi": 1000
     },
     {
-      "label": "C13 ceiling: tau=2%, global-mean $100k/member -> $2,000/yr; quoted in the manuscript",
-      "computed": 2000,
-      "lo": 2000,
-      "hi": 2000
+      "label": "C13 ceiling: tau=2%, global-mean $95,384/member (UBS 2024) -> ~$1,908/yr, just under the $2,000 floor tier; quoted in the manuscript",
+      "computed": 1908,
+      "lo": 1908,
+      "hi": 1908
     },
     {
       "label": "C16/C18 Part III: W*=$50,000 (d/tau), $1M holder pays $20,000 vs a ~$1,000 dividend, floor time-to-tier ~48 years at g=10%; all quoted in the manuscript",

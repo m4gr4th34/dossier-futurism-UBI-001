@@ -156,12 +156,20 @@ else:
     check("C13 scaling: tau=2%, $50k wrapped/member -> $1,000/yr levy and $800 first-year net; both quoted in the manuscript",
           d_sus_50k + poison5, 1000, 1000)
 
-    # (#6) ceiling: at tau=2%, W/P=$100k (global mean) -> $2,000/yr; the prose must quote it.
-    d_sus_100k = d_sustained(100_000)
+    # (#6) ceiling: the global-mean scenario (UBS 2024, ~$95,384/member) yields ~$1,908/yr at
+    #      tau=2% — just UNDER the $2,000 floor tier (the old $100k round sat exactly on it; the
+    #      audit's item-9 fix moved it below). Recompute from the model's mean row; the prose must
+    #      quote the corrected figure and say it is just under the floor.
+    mean_row = next((s for s in M["scenarios"] if "mean" in s["name"].lower()), None)
+    mean_w = mean_row["w_per_p"] if mean_row else 95384
+    d_mean = round(tau_eval * mean_w)                       # 1908
     poison6 = 0
-    if "$2,000" not in manuscript: poison6 += 10
-    check("C13 ceiling: tau=2%, global-mean $100k/member -> $2,000/yr; quoted in the manuscript",
-          d_sus_100k + poison6, 2000, 2000)
+    if mean_row is None or abs(mean_row["d_sustained"] - tau_eval * mean_w) > EPS: poison6 += 1
+    if d_mean >= 2000: poison6 += 1                         # must be UNDER the floor tier
+    if "$1,908" not in manuscript: poison6 += 10
+    if "just under the floor" not in manuscript: poison6 += 10
+    check("C13 ceiling: tau=2%, global-mean $95,384/member (UBS 2024) -> ~$1,908/yr, just under the $2,000 floor tier; quoted in the manuscript",
+          d_mean + poison6, 1908, 1908)
 
     # (#7) Part III (C16/C18): re-derive the participation-constraint numbers and one time-to-tier
     #      value, and assert the prose quotes them. W* = d_ref/tau = $50,000; a $1M holder pays

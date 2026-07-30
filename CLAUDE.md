@@ -151,13 +151,19 @@ verification script, and its claim ledger all live here.
   author-chosen, anchored to cited magnitudes) are the two new EST / OPEN-UNVERIFIED
   rows those judgments live in. Recorded finding (model output under stated
   assumptions): at τ=2%, $50k wrapped/member yields $1,000/yr ($800 first-year net);
-  the global-mean-wealth ceiling is ~$2,000/yr (the floor tier); a living wage is
-  unreachable from levies alone at any τ ≤ 5% — Rings 1–2 buy a poverty-relevant
-  dividend at bounded membership, a universal floor needs Ring-3 scale, and beyond a
-  floor the commons itself must grow.
-  The citation-backed rows (C01–C03, C05, C11, C12) sit at
-  status OPEN pending this dossier's own citation audit — they become ESTABLISHED
-  only when that audit re-checks them. Author judgments C04, C06, C07 and the
+the global-mean-wealth ceiling is ~$1,908/yr — just under the $2,000 floor tier (audit
+  item 9 moved this from the old $100k round, which sat exactly on the boundary, to the
+  cited UBS mean $95,384); a living wage is unreachable from levies alone at any τ ≤ 5% —
+  Rings 1–2 buy a poverty-relevant dividend at bounded membership, a universal floor needs
+  Ring-3 scale, and beyond a floor the commons itself must grow.
+  The citation audit CLOSED 2026-07-29 (verifier of record: citation_audit.md, with a
+  full disposition table): C01, C02, C05, C11, C12 → ESTABLISHED; C03 → REPORTED (its only
+  source is the interested-party Kleros post-mortem). Downgrades made in-audit: the
+  nonexistent Kenya "NBER" number dropped; EIP-5320 relabeled a closed/unmerged proposal;
+  Alaska PFD corrected to ~$1,000–$1,700 (not ~$2,000); the unverifiable "French 1958
+  ordinance" claim removed and replaced with the documented Wörgl 1933 suppression; Worldcoin
+  scale softened to ~ten-million-plus; Sarafu upgraded to ESTABLISHED on independent
+  peer-reviewed literature. Author judgments C04, C06, C07 and the
   central challenge C08 are OPEN-UNVERIFIED. The asset-redistribution mechanism is
   split: C09 is EXPLORATORY-CONJECTURE (the synthesis) and C10 is NOVEL /
   TO-OUR-KNOWLEDGE — NARROWED and GROUNDED 2026-07-29 to the four-element combination
@@ -253,15 +259,15 @@ verification script, and its claim ledger all live here.
     near-miss: Vicente 2023 (land, partly issuance-funded, two-token, no chartalist
     anchor). C10 stays NOVEL / TO-OUR-KNOWLEDGE — now GROUNDED by the dated trail,
     not merely asserted. Two minor manual checks remain OPEN (cleisme.org, Ğ1 forums).
-  - Substantive drafting is COMPLETE (Parts I–III, the model, the figures). No modeling
-    or novelty gate is outstanding. Remaining work, IN ORDER, before release:
-    (1) close the citation audit — the cite-card verification items in citation_audit.md
-    (Vicente 2023, Rallo 2020, Bruenig 2018, Olson 1965, the CLT/Champlain and Optimism
-    cards, the global-wealth figures, the Part I CITE rows) plus the manual French checks
-    (cleisme.org, Ğ1 forums) and the route-R novelty re-check; then (2) an adversarial
-    red-team pass on the whole dossier (esp. C16's derivation, now DERIV/OPEN pending
-    exactly that); then (3) first release (tag → Zenodo DOI + OpenTimestamps). This is the
-    hardening sequence — the "Final substantive revision before hardening" is now done.
+  - Substantive drafting is COMPLETE (Parts I–III, the model, the figures) and the CITATION
+    AUDIT is CLOSED (2026-07-29, 20/20 items). Item 9 was resolved (b): the model's
+    global-wealth constants now use cited UBS figures (mean $95,384 / 2024, median $8,654 /
+    2022), which flipped the mean scenario to just-under-floor (~$1,908/yr) — the round $100k
+    had sat exactly on the $2,000 floor boundary. One non-blocking residual: item 16 (a
+    logged-in Ğ1-forum search is owed; external indexing found nothing). Remaining work, IN
+    ORDER, before release: (1) an adversarial red-team pass on the whole dossier (esp. C16's
+    derivation, DERIV/OPEN pending exactly that); then (2) first release
+    (tag → Zenodo DOI + OpenTimestamps).
   - C08 success criteria: when the blueprint finalizes the central challenge, its
     quantitative success criteria MUST include all four legs — a purchasing-power
     criterion, a scale criterion, velocity/sink data, and a labor-market criterion.

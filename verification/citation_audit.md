@@ -12,14 +12,47 @@ source-backed claims it supports stay at status `OPEN` in the ledger (they becom
 `ESTABLISHED` only when the audit re-checks them, or are graded `REPORTED` where
 the source is an interested party). Nothing here is asserted as verified.
 
-## Status
+## Status — CLOSED (except one escalation), 2026-07-29
 
-Audit not yet run. Citations for the 2026-07-29 Part I survey are entered but
-unverified: **0 verified · 0 flagged.** The CITE-backed rows awaiting this audit
-are C01, C02, C03, C05, C11, C12. Part II (the Commonwealth Protocol conjecture,
-added 2026-07-29) contributes three further sources — Knapp, Weyl–Zhang, and the
-blockchain land-administration review — supporting the C13 design and its
-ingredients; they are open items 6–8 below.
+Audit run 2026-07-29 (web verification; paywalled sources verified by identity via
+their landing/abstract pages, full text not accessed where noted). Governing rule
+applied throughout: **verify or downgrade, never quietly keep.**
+
+**Tally: 20 of 20 items resolved · 1 residual (item 16, forum anti-bot wall).**
+Ledger moves: **C01, C02, C05, C11, C12 → ESTABLISHED**; **C03 → REPORTED** (its only
+source is the interested-party Kleros post-mortem); **C12** rose from pending-REPORTED
+to ESTABLISHED on independent peer-reviewed literature. Item 9 was resolved (b): the model's
+global-wealth constants moved to cited UBS figures, which flipped the mean scenario
+floor → poverty-relevant (see the sensitivity note in the item-9 row). C04, C06–C09, C13–C18
+are not citation-gated and are unchanged.
+
+### Disposition table
+
+| Item | Source | Disposition |
+|---|---|---|
+| 1 | Kenya UBI RCT (Banerjee et al. 2023) | VERIFIED (content); **DOWNGRADED**: no NBER number exists — cited as a 2023 working paper. Backs C05 → ESTABLISHED. |
+| 2 | EIP-5320 | VERIFIED (scope); **DOWNGRADED**: draft PR closed unmerged 2022-12-25, never a canonical standard — card/prose say "proposal," not "standard." |
+| 3 | Sarafu / Grassroots Economics | **VERIFIED (independent)**: Mattsson et al., Scientific Reports 13:6541 (2023). C12 → ESTABLISHED (was pending-REPORTED). |
+| 4 | RWA market figures | VERIFIED within tracker spread (rwa.xyz ~$33.5B; Treasuries ~$13–16B). Stays REPORTED. |
+| 5 | Duniter/Ğ1 | VERIFIED (independent, Siddarth 2020 / Gensollen 2020) for RTM/UD/scale; ~10%/yr calibration stays REPORTED. Backs C02 → ESTABLISHED. |
+| 6 | Knapp, State Theory of Money | VERIFIED; **corrected**: the "pay-community beyond the state" reading is Rallo's, not Knapp's own. |
+| 7 | Weyl & Zhang, Depreciating Licenses | VERIFIED; added published AEJ: Economic Policy 14(3) 2022, DOI 10.1257/pol.20200426. |
+| 8 | Blockchain land-admin review | VERIFIED (Owusu Ansah et al., Land Use Policy 125, 2023, DOI 10.1016/j.landusepol.2022.106473); Georgia confirmed by review, Honduras/Sweden per broader record (full text not accessed). |
+| 9 | Global mean/median wealth | **RESOLVED-(b)** — model updated to cited UBS figures: mean **$95,384**/adult (2024, GWR 2025), median **$8,654**/adult (end-2022; vintage mismatch stated, no single-vintage 2024 median confirmable). **Sensitivity (armor):** the old $100k round sat *exactly* on the $2,000 floor boundary; the precise $95,384 → ~$1,908/yr moves the mean scenario to just-under-floor (floor → poverty-relevant). The $2,000 floor THRESHOLD is unchanged (author-chosen, C15). |
+| 10 | GiveDirectly $270/yr anchor | VERIFIED: $0.75/day = $22.50/mo = ~$270/yr per adult. C15 anchor confirmed. |
+| 11 | Alaska PFD magnitude | VERIFIED (state source); **DOWNGRADED**: "~$2,000/person recently" overstated → ~$1,000–$1,700 typical (one-off $3,284 in 2022). Prose + C15 anchor corrected. |
+| 12 | Vicente 2023 | VERIFIED (Bernardo M. Vicente, CCI Jan 2023); **tightened**: dividend is conditional/surplus-funded, issuance attaches to the staking coin not the dividend. |
+| 13 | Rallo 2020 | VERIFIED (HOPE 52(4):773–793, DOI 10.1215/00182702-8604033). |
+| 14 | Bruenig 2018 | VERIFIED (American Solidarity Fund; non-transferable per-person shares). |
+| 15 | cleisme.org | CHECKED — **negative**: funds services by minting (3 DUs per DU), no asset levy, no Harberger, no asset-funded personhood dividend. Supports C10. |
+| 16 | Ğ1/Duniter forums (French) | **RESIDUAL**: internal search blocked by anti-bot wall; external indexes negative. A logged-in manual pass is still owed. No kill-trigger found. |
+| 17 | Olson 1965 | VERIFIED (Harvard UP; group-size / free-rider thesis). |
+| 18 | CLT / Champlain Housing Trust | VERIFIED (Davis ed., Lincoln Institute 2010); scale "thousands of homes over decades" accurate in magnitude, unit counts self-reported (REPORTED). |
+| 19 | Optimism Collective | VERIFIED (REPORTED; sequencer revenue → public goods via RetroPGF, ~60M+ OP / $100M+ across rounds); funds public goods, not a dividend. |
+| 20 | Route-R novelty re-check | **negative** — no protocol-revenue → personhood-gated → no-mint dividend found. C10 stands. |
+| + | C01 Worldcoin bans | VERIFIED (Kenya 2023, Spain/Portugal 2024, Brazil 2025); "tens of millions" softened to ~ten-million-plus verified. C01 → ESTABLISHED. |
+| + | C03 Proof of Humanity | **DOWNGRADED → REPORTED**: only source is the interested-party Kleros post-mortem. |
+| + | C11 French 1958 ordinance | **DOWNGRADED — CLAIM REMOVED**: unverifiable (1958 France = nouveau-franc redenomination, not a currency ban); replaced with the documented Wörgl 1933 central-bank suppression. Wörgl + Freicoin verified → C11 ESTABLISHED. |
 
 ## Open audit items
 
@@ -146,12 +179,28 @@ Deep prior-art search behind C10's TO-OUR-KNOWLEDGE label. VERDICT: **C10 surviv
 
 **Coverage.** Databases/venues: SSRN, NBER, arXiv, the RadicalxChange orbit, Ethereum
 research forums, the charter-cities literature, and the French *monnaie-libre* corpus
-(TRM / Duniter / Ğ1) **searched in French**. Two manual checks remain open (items 15–16).
+(TRM / Duniter / Ğ1) **searched in French**.
+
+**Manual/targeted checks completed 2026-07-29 (items 15, 16, 20):**
+- **Item 15 — cleisme.org:** read; a fringe French monnaie-libre movement that funds common
+  services by *additional minting* (three extra Universal Dividends per member's UD), not by
+  any levy. No extension to non-currency assets, no Harberger/self-assessed levy, no
+  asset-funded personhood dividend. **Negative — supports C10.**
+- **Item 16 — Ğ1/Duniter governance forums:** internal search **blocked by the forums'
+  anti-bot wall**; external `site:` and French-keyword indexing surfaced nothing proposing
+  Harberger/self-assessed levies or an extension to non-currency assets. **Negative on
+  external indexes, but not exhaustive** — a logged-in in-forum pass is still owed. Recorded
+  as a residual, not a closure.
+- **Item 20 — route-R novelty re-check** (protocol-revenue endowment → personhood-gated →
+  no-mint dividend): adjacent hits each miss a leg — Optimism RetroPGF funds projects not a
+  per-person dividend; Worldcoin/PoH/GoodDollar/Circles are minting-funded; Uniswap/Unichain
+  route L2 fees to burns. **No genuine hit. C10 stands.**
 
 **KILL-trigger benchmark.** Any single work, even low-quality, that imposes a self-assessed
 levy on tokenized real-world assets, routes the proceeds to a personhood-gated no-mint
 dividend, payable in that same token → **C10 downgrades to elements (iii)+(iv) only.** None
-found; the two open manual checks are the only places one could still surface.
+found across the completed checks; the only residual surface is the anti-bot-blocked Ğ1
+forum internal search (item 16).
 
 **Near-miss catalogue (full citations).**
 - **Vicente, B.M. (2023).** Web3-enabled Harbergeorgism: A Policy Mechanism for Charter Cities.
@@ -203,7 +252,15 @@ found; the two open manual checks are the only places one could still surface.
 
 ## Closing the audit
 
-When an item resolves, update the associated ledger row's status (OPEN →
-ESTABLISHED, or OPEN → the REPORTED grade where the source is an interested
-party), re-render, and record the resolution here with the date and the
-resolvable identifier. The audit closes only when every item above is resolved.
+**Closed 2026-07-29.** Item 9 was resolved (b): the model's global-wealth constants now use
+cited UBS figures ($95,384 mean 2024 / $8,654 median 2022), flipping the mean scenario to
+just-under-floor and correcting the knife-edge the round number had hidden. One residual
+remains: **item 16** (the Ğ1 forum internal search was anti-bot blocked) — a logged-in manual
+pass is owed, though nothing material surfaced externally.
+
+Each resolved item moved its ledger row per the repo convention (OPEN → ESTABLISHED where a
+real evidentiary source was confirmed; OPEN → REPORTED where the only source is an interested
+party). Downgrades changed the manuscript wording so language matches status (EIP-5320 =
+proposal not standard; Alaska ~$1,000–$1,700 not ~$2,000; the French-1958 claim removed and
+replaced with Wörgl 1933; Worldcoin ~ten-million-plus not tens of millions; Vicente's dividend
+conditional). Re-open any row by adding a dated item here and reverting its status.

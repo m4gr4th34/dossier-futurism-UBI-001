@@ -62,12 +62,19 @@ G_ROWS = [0.10, 0.20]   # the two growth rates the time-to-tier block reports
 
 # ---- SCENARIOS (evaluated at TAU_EVAL). W_per_P is wrapped wealth per member. ----
 # P=None rows are quoted per-member directly (no absolute base): the two global-wealth rows.
+# The two global-wealth rows use CITED UBS Global Wealth Report figures (citation audit item 9,
+# resolved (b), 2026-07-29). VINTAGE MISMATCH, stated honestly: the global MEAN ~$95,384/adult is
+# the 2024 figure (GWR 2025 edition); the global MEDIAN ~$8,654/adult is the end-2022 figure — a
+# single-vintage 2024 median was NOT confirmable from the public summaries (the GWR 2025 PDF figure
+# could not be retrieved). Using these as scenario anchors remains an author choice (EST, C14/C15);
+# the numbers themselves are now cited, not round. NB: at tau=2% the mean yields ~$1,908/yr, which
+# lands JUST UNDER the $2,000 floor tier — the $100k round previously sat exactly on that boundary.
 SCENARIOS_IN = [
     {"name": "Ring 1-2 today",       "W": 1e9, "P": 1_000_000},
     {"name": "Ring 1-2 stretch",     "W": 5e9, "P": 100_000},
-    {"name": "Global median wealth", "W_per_P": 8_000,   "P": None},
-    {"name": "Global mean wealth",   "W_per_P": 100_000, "P": None,
-     "note": "ceiling row; mean-wealth source TO-VERIFY in citation_audit.md"},
+    {"name": "global median wealth (UBS 2022)", "W_per_P": 8_654,  "P": None},
+    {"name": "global mean wealth (UBS 2024)",   "W_per_P": 95_384, "P": None,
+     "note": "ceiling row; UBS mean wealth/adult ~$95,384 (2024, GWR 2025) -> ~$1,908/yr at tau=2%, just under the $2,000 floor tier"},
 ]
 
 
@@ -152,8 +159,9 @@ def build_frontier():
 def build_finding(scenarios):
     return {
         "headline": ("At tau=2%, every $50k of wrapped assets per member yields $1,000/yr "
-                     "(tau*W/P); the global-mean-wealth ceiling is ~$2,000/yr; the living-wage "
-                     "tier is unreachable from levies alone at any tau <= 5%."),
+                     "(tau*W/P); the global-mean-wealth ceiling is ~$1,908/yr (just under the "
+                     "$2,000 floor tier); the living-wage tier is unreachable from levies alone "
+                     "at any tau <= 5%."),
         "rings12": "poverty-relevant at bounded membership, symbolic at scale",
         "floor_requires": "Ring-3 scale (the minimal leviathan)",
         "living_wage": ("arithmetically unreachable from redistribution alone at any survivable "
@@ -171,8 +179,8 @@ def build_console_checks():
          "computed": 0, "lo": 0, "hi": 0},
         {"label": "C13 scaling: tau=2%, $50k wrapped/member -> $1,000/yr levy and $800 first-year net; both quoted in the manuscript",
          "computed": 1000, "lo": 1000, "hi": 1000},
-        {"label": "C13 ceiling: tau=2%, global-mean $100k/member -> $2,000/yr; quoted in the manuscript",
-         "computed": 2000, "lo": 2000, "hi": 2000},
+        {"label": "C13 ceiling: tau=2%, global-mean $95,384/member (UBS 2024) -> ~$1,908/yr, just under the $2,000 floor tier; quoted in the manuscript",
+         "computed": 1908, "lo": 1908, "hi": 1908},
         {"label": "C16/C18 Part III: W*=$50,000 (d/tau), $1M holder pays $20,000 vs a ~$1,000 dividend, floor time-to-tier ~48 years at g=10%; all quoted in the manuscript",
          "computed": 50000, "lo": 50000, "hi": 50000},
     ]
