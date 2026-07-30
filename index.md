@@ -136,6 +136,14 @@ If compulsion is off the table, the design does not die — it slows down. Three
 
 The no-state routes buy their way past the participation constraint with time, and the model prices it. From today's Ring 1–2 base ($1,000 wrapped per member, a $20/yr dividend at τ=2%), holding membership constant, the dividend reaches the poverty-relevant tier in about **27 years** and the floor tier in about **48 years** at an endowment growth rate of 10%/yr; at 20%/yr, in about 14 and 25 years. The governing variable is the endowment growth rate g, not the levy rate τ — once the levy is set, time is bought with growth. Two honesty flags: g in the modeled 5–20% range is a young-protocol accretion assumption (protocol revenue plus retained levy plus new-commons formation), an author judgment in the `C14` family, not a market-return promise; and constant membership is a conservative simplification — a growing membership raises the bar and lengthens the wait. This is claim `C18`.
 
+### Where the resources actually are
+
+The global ceiling of ~$1,908/yr is an average that folds in the ~41% of adults holding under $10,000. Decompose it by country and the picture inverts. At the same 2% levy, the **US-mean** scenario — cited wealth per adult ~$696,000 (UBS Global Wealth Report 2026, 2025 data) — pays **~$13,900/yr**, clearing the living-wage tier: the only modeled scenario that does. The **US-median** scenario — ~$69,000 per adult — pays **~$1,380/yr**, merely poverty-relevant. The median resident of the richest large economy sits closer to the global story than to their own national mean, and that gap is precisely the inequality the levy would tax.
+
+A back-of-envelope aggregate confirms the scale — context, not a model output (REPORTED grade, Federal Reserve Financial Accounts / Z.1, figures to be pinned in the audit): a 2% levy on the ~$160T of US household net worth is ~$3.2T/yr, on the order of a tenth of GDP — enormous, yet within the scale of existing transfer spending. The resources are physically present.
+
+*The one jurisdiction where the arithmetic clears the bar is a jurisdiction that has not done it: the limit is political precisely because it is not physical. This is claim `C19`.*
+
 ### The conclusion, and the premise answered
 
 The technical objects exist. The registry, the zero-issuance invariant, the covenant levy, the chartalist anchor, the arithmetic and its ceiling — this dossier has built their composition and made it testable, and its own verifier re-derives every number on this page. What does not exist is the collective choice. The fast path opens only at constitutional moments, on new commons, before incumbents form; the slow path is open now, to anyone, and requires no permission — only patience measured in the growth rate of a commons.
@@ -175,8 +183,9 @@ Results from `verification/verify_numbers.py` — the same checks the in-page co
 - [PASS] C13 scaling: tau=2%, $50k wrapped/member -> $1,000/yr levy and $800 first-year net; both quoted in the manuscript
 - [PASS] C13 ceiling: tau=2%, global-mean $95,384/member (UBS 2024) -> ~$1,908/yr, just under the $2,000 floor tier; quoted in the manuscript
 - [PASS] C16/C18 Part III: W*=$50,000 (d/tau), $1M holder pays $20,000 vs a ~$1,000 dividend, floor time-to-tier ~48 years at g=10%; all quoted in the manuscript
+- [PASS] C19 US decomposition: tau=2%, US mean $696,277/adult (UBS 2026) -> ~$13,900/yr (clears the living-wage tier, the only scenario that does), US median $68,998 -> ~$1,380/yr (poverty-relevant); quoted in the manuscript
 
-**TOTAL: 7 checks · 7 pass · 0 fail** — All checks pass — the survey is internally consistent.
+**TOTAL: 8 checks · 8 pass · 0 fail** — All checks pass — the survey is internally consistent.
 
 ## 01 Proof of personhood — the binding constraint
 
@@ -261,3 +270,5 @@ The blueprint that will sit above this part must satisfy, at minimum: **(i) dema
 **Davis, John Emmeus (ed.) (2010).** The Community Land Trust Reader. Lincoln Institute of Land Policy. The standard reference on the community-land-trust model — covenant-encumbered, resale-restricted tenure under ordinary contract law — the precedent for Part III's no-state acquisition route 3a. The Champlain Housing Trust (Vermont; formed 1984, merged 2006) stewards on the order of thousands of homes over roughly four decades; those unit counts are self-reported (REPORTED).
 
 **Optimism Collective — Retroactive Public Goods Funding and sequencer revenue.** optimism.io / official governance docs (REPORTED grade — project's own documentation). Optimism's founding commitment directs net sequencer revenue to the Collective for public-goods funding, distributed retrospectively across multiple rounds at scale (on the order of 60M+ OP / $100M+ USD-equivalent to date). It funds public goods and projects, NOT a per-person dividend — the revenue half of Part III's route R; no deployment yet points such revenue at a personhood-gated no-mint dividend.
+
+**UBS Global Wealth Report 2026 (17th edition; 2025 data).** US mean wealth per adult $696,277, US median $68,998 — a same-vintage pair; at a 2% levy these give the ~$13,900 (living-wage-clearing) and ~$1,380 (poverty-relevant) figures of Part III's decomposition (C19). Edition note: the GWR 2025 edition (2024 data) reported a substantially higher US median (~$124,041) — the drop between editions is real (see the audit item). The global mean/median anchors of the model draw on the same UBS series (2024 mean ~$95,384; end-2022 median ~$8,654).

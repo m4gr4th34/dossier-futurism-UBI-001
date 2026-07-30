@@ -123,6 +123,21 @@ def main():
                 ok_mono = False
     check("time_to_tier: years strictly decrease as g increases (both tiers)", ok_mono)
 
+    # (8) Part-country decomposition (C19): US mean/median scenarios recompute exactly and land in the
+    #     asserted tiers — US mean is the ONLY scenario reaching the living-wage tier.
+    by_name = {s["name"]: s for s in M["scenarios"]}
+    us_mean = by_name.get("US mean wealth (UBS 2025)")
+    us_med = by_name.get("US median wealth (UBS 2025)")
+    tau = M["constants"]["tau_eval"]
+    check("US mean scenario present, d == tau*W exact",
+          bool(us_mean) and approx(us_mean["d_sustained"], round(tau * us_mean["w_per_p"], 6)))
+    check("US mean tier == living-wage (the only scenario that clears it)",
+          bool(us_mean) and us_mean["tier"] == "living-wage"
+          and sum(1 for s in M["scenarios"] if s["tier"] == "living-wage") == 1)
+    check("US median present, d == tau*W exact, tier == poverty-relevant",
+          bool(us_med) and approx(us_med["d_sustained"], round(tau * us_med["w_per_p"], 6))
+          and us_med["tier"] == "poverty-relevant")
+
     print("\n" + ("%d FAILURE(S)." % fails if fails else "all lockstep checks passed."))
     return 1 if fails else 0
 

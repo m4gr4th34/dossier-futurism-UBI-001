@@ -234,6 +234,44 @@
         "dividend_total": 1907.68
       },
       "note": "ceiling row; UBS mean wealth/adult ~$95,384 (2024, GWR 2025) -> ~$1,908/yr at tau=2%, just under the $2,000 floor tier"
+    },
+    {
+      "name": "US median wealth (UBS 2025)",
+      "W": null,
+      "P": null,
+      "w_per_p": 68998,
+      "tau": 0.02,
+      "d_sustained": 1379.96,
+      "d_firstyear": 1103.968,
+      "tier": "poverty-relevant",
+      "flow": {
+        "levy_paid": 1379.96,
+        "levy_to_dividend": 1103.968,
+        "levy_to_treasury": 275.992,
+        "treasury_per_member": 18399.466667,
+        "yield_component": 275.992,
+        "dividend_total": 1379.96
+      },
+      "note": "poverty-relevant at tau=2% (~$1,380/yr); the median American is closer to the global story than to the US mean"
+    },
+    {
+      "name": "US mean wealth (UBS 2025)",
+      "W": null,
+      "P": null,
+      "w_per_p": 696277,
+      "tau": 0.02,
+      "d_sustained": 13925.54,
+      "d_firstyear": 11140.432,
+      "tier": "living-wage",
+      "flow": {
+        "levy_paid": 13925.54,
+        "levy_to_dividend": 11140.432,
+        "levy_to_treasury": 2785.108,
+        "treasury_per_member": 185673.866667,
+        "yield_component": 2785.108,
+        "dividend_total": 13925.54
+      },
+      "note": "the ONLY modeled scenario clearing the living-wage tier (~$13,900/yr at tau=2%) — the arithmetic clears where politics has not"
     }
   ],
   "participation": {
@@ -277,16 +315,25 @@
       }
     ]
   },
+  "us_aggregate_context": {
+    "_grade": "REPORTED context — Federal Reserve Financial Accounts (Z.1) scale; exact figures TO-VERIFY in citation_audit.md. NOT a model output and NOT used in the frontier math; a prose sanity check only.",
+    "household_net_worth_usd": "~160T",
+    "levy_at_2pct_usd": "~3.2T",
+    "approx_pct_of_gdp": "~11%"
+  },
   "finding": {
     "headline": "At tau=2%, every $50k of wrapped assets per member yields $1,000/yr (tau*W/P); the global-mean-wealth ceiling is ~$1,908/yr (just under the $2,000 floor tier); the living-wage tier is unreachable from levies alone at any tau <= 5%.",
     "rings12": "poverty-relevant at bounded membership, symbolic at scale",
     "floor_requires": "Ring-3 scale (the minimal leviathan)",
     "living_wage": "arithmetically unreachable from redistribution alone at any survivable tau; the commons itself must grow",
+    "decomposition": "At tau=2%, US mean wealth (~$696k/adult, UBS 2026) yields ~$13,900/yr — the only modeled scenario clearing the living-wage tier — while US median (~$69k) yields ~$1,380/yr, poverty-relevant. Living-wage UBI from wealth redistribution is resource-feasible within rich countries and infeasible globally; the binding constraint in rich countries is therefore political.",
     "per_scenario": {
       "Ring 1-2 today": "symbolic",
       "Ring 1-2 stretch": "poverty-relevant",
       "global median wealth (UBS 2022)": "symbolic",
-      "global mean wealth (UBS 2024)": "poverty-relevant"
+      "global mean wealth (UBS 2024)": "poverty-relevant",
+      "US median wealth (UBS 2025)": "poverty-relevant",
+      "US mean wealth (UBS 2025)": "living-wage"
     }
   },
   "console_checks": [
@@ -313,6 +360,12 @@
       "computed": 50000,
       "lo": 50000,
       "hi": 50000
+    },
+    {
+      "label": "C19 US decomposition: tau=2%, US mean $696,277/adult (UBS 2026) -> ~$13,900/yr (clears the living-wage tier, the only scenario that does), US median $68,998 -> ~$1,380/yr (poverty-relevant); quoted in the manuscript",
+      "computed": 13926,
+      "lo": 13926,
+      "hi": 13926
     }
   ]
 }

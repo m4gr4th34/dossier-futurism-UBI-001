@@ -190,6 +190,27 @@ else:
         check("C16/C18 Part III: W*=$50,000 (d/tau), $1M holder pays $20,000 vs a ~$1,000 dividend, floor time-to-tier ~48 years at g=10%; all quoted in the manuscript",
               P["w_star"] + poison7, 50_000, 50_000)
 
+    # (#8) Part-country decomposition (C19): re-derive the US mean/median dividends from the model's
+    #      cited UBS figures, assert the tiers (US mean is the ONLY scenario clearing the living-wage
+    #      tier; US median is poverty-relevant), and require the prose to quote the rounded forms.
+    by_name = {s["name"]: s for s in M["scenarios"]}
+    us_mean = by_name.get("US mean wealth (UBS 2025)")
+    us_med = by_name.get("US median wealth (UBS 2025)")
+    poison8 = 0
+    if us_mean is None or us_med is None:
+        poison8 += 100
+    else:
+        if abs(tau_eval * us_mean["w_per_p"] - us_mean["d_sustained"]) > EPS: poison8 += 1
+        if abs(tau_eval * us_med["w_per_p"] - us_med["d_sustained"]) > EPS: poison8 += 1
+        if us_mean["tier"] != "living-wage": poison8 += 1
+        if us_med["tier"] != "poverty-relevant": poison8 += 1
+        if sum(1 for s in M["scenarios"] if s["tier"] == "living-wage") != 1: poison8 += 1
+    if "$13,900" not in manuscript: poison8 += 10   # US mean, rounded form used consistently in prose
+    if "$1,380" not in manuscript: poison8 += 10    # US median
+    d_us_mean = round(tau_eval * us_mean["w_per_p"]) if us_mean else -1   # 13926
+    check("C19 US decomposition: tau=2%, US mean $696,277/adult (UBS 2026) -> ~$13,900/yr (clears the living-wage tier, the only scenario that does), US median $68,998 -> ~$1,380/yr (poverty-relevant); quoted in the manuscript",
+          d_us_mean + poison8, 13926, 13926)
+
 # ----------------------------------------------------------------
 print()
 n_fail = sum(1 for r in results if r[0] == FAIL)

@@ -75,6 +75,18 @@ SCENARIOS_IN = [
     {"name": "global median wealth (UBS 2022)", "W_per_P": 8_654,  "P": None},
     {"name": "global mean wealth (UBS 2024)",   "W_per_P": 95_384, "P": None,
      "note": "ceiling row; UBS mean wealth/adult ~$95,384 (2024, GWR 2025) -> ~$1,908/yr at tau=2%, just under the $2,000 floor tier"},
+    # PER-COUNTRY DECOMPOSITION (C19) — cited UBS Global Wealth Report 2026 (17th edn., 2025 data):
+    # US mean wealth/adult $696,277, US median $68,998 (a SINGLE-vintage pair, cleaner than the global
+    # pair above). Edition discrepancy noted in the audit: the GWR 2025 edition put the US median at
+    # ~$124,041 (2024 data) — a large drop between editions. Finding: at tau=2% the US MEAN clears the
+    # living-wage tier (the ONLY modeled scenario that does), while the US MEDIAN is only
+    # poverty-relevant — the median American is nearer the global story than the US mean, and that gap
+    # is the inequality the levy would tax. This SHARPENS the political-limit thesis: the one place the
+    # arithmetic clears the bar is a place that has not done it.
+    {"name": "US median wealth (UBS 2025)", "W_per_P": 68_998,  "P": None,
+     "note": "poverty-relevant at tau=2% (~$1,380/yr); the median American is closer to the global story than to the US mean"},
+    {"name": "US mean wealth (UBS 2025)",   "W_per_P": 696_277, "P": None,
+     "note": "the ONLY modeled scenario clearing the living-wage tier (~$13,900/yr at tau=2%) — the arithmetic clears where politics has not"},
 ]
 
 
@@ -166,6 +178,11 @@ def build_finding(scenarios):
         "floor_requires": "Ring-3 scale (the minimal leviathan)",
         "living_wage": ("arithmetically unreachable from redistribution alone at any survivable "
                         "tau; the commons itself must grow"),
+        "decomposition": ("At tau=2%, US mean wealth (~$696k/adult, UBS 2026) yields ~$13,900/yr — "
+                          "the only modeled scenario clearing the living-wage tier — while US median "
+                          "(~$69k) yields ~$1,380/yr, poverty-relevant. Living-wage UBI from wealth "
+                          "redistribution is resource-feasible within rich countries and infeasible "
+                          "globally; the binding constraint in rich countries is therefore political."),
         "per_scenario": {s["name"]: s["tier"] for s in scenarios},
     }
 
@@ -183,6 +200,8 @@ def build_console_checks():
          "computed": 1908, "lo": 1908, "hi": 1908},
         {"label": "C16/C18 Part III: W*=$50,000 (d/tau), $1M holder pays $20,000 vs a ~$1,000 dividend, floor time-to-tier ~48 years at g=10%; all quoted in the manuscript",
          "computed": 50000, "lo": 50000, "hi": 50000},
+        {"label": "C19 US decomposition: tau=2%, US mean $696,277/adult (UBS 2026) -> ~$13,900/yr (clears the living-wage tier, the only scenario that does), US median $68,998 -> ~$1,380/yr (poverty-relevant); quoted in the manuscript",
+         "computed": 13926, "lo": 13926, "hi": 13926},
     ]
 
 
@@ -269,6 +288,12 @@ def build_model():
         "scenarios": scenarios,
         "participation": build_participation(),
         "time_to_tier": build_time_to_tier(),
+        "us_aggregate_context": {
+            "_grade": "REPORTED context — Federal Reserve Financial Accounts (Z.1) scale; exact figures TO-VERIFY in citation_audit.md. NOT a model output and NOT used in the frontier math; a prose sanity check only.",
+            "household_net_worth_usd": "~160T",
+            "levy_at_2pct_usd": "~3.2T",
+            "approx_pct_of_gdp": "~11%",
+        },
         "finding": build_finding(scenarios),
         "console_checks": build_console_checks(),
     }

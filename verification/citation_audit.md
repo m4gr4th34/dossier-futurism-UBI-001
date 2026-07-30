@@ -18,7 +18,7 @@ Audit run 2026-07-29 (web verification; paywalled sources verified by identity v
 their landing/abstract pages, full text not accessed where noted). Governing rule
 applied throughout: **verify or downgrade, never quietly keep.**
 
-**Tally: 20 of 20 items resolved · 1 residual (item 16, forum anti-bot wall).**
+**Tally: 20 of 20 items + C19's two sources (items 21–22) resolved · 1 residual (item 16, forum anti-bot wall) · 1 REPORTED-context TO-VERIFY (item 22).**
 Ledger moves: **C01, C02, C05, C11, C12 → ESTABLISHED**; **C03 → REPORTED** (its only
 source is the interested-party Kleros post-mortem); **C12** rose from pending-REPORTED
 to ESTABLISHED on independent peer-reviewed literature. Item 9 was resolved (b): the model's
@@ -53,6 +53,8 @@ are not citation-gated and are unchanged.
 | + | C01 Worldcoin bans | VERIFIED (Kenya 2023, Spain/Portugal 2024, Brazil 2025); "tens of millions" softened to ~ten-million-plus verified. C01 → ESTABLISHED. |
 | + | C03 Proof of Humanity | **DOWNGRADED → REPORTED**: only source is the interested-party Kleros post-mortem. |
 | + | C11 French 1958 ordinance | **DOWNGRADED — CLAIM REMOVED**: unverifiable (1958 France = nouveau-franc redenomination, not a currency ban); replaced with the documented Wörgl 1933 central-bank suppression. Wörgl + Freicoin verified → C11 ESTABLISHED. |
+| 21 | UBS Global Wealth Report 2026 (US mean/median) | **VERIFIED** (2026-07-29): US mean wealth/adult **$696,277**, median **$68,998** (2025 data, 17th edn.; single-vintage pair). Confirmed via IndexBox + Yahoo/Newsweek coverage. **Edition discrepancy noted:** the GWR 2025 edition (2024 data) reported a much higher US median ~$124,041 — a real drop between editions ("typical Americans' wealth fell 2020–2025"). Backs C19. |
+| 22 | US household net worth aggregate (Fed Z.1) | **REPORTED context, TO-VERIFY**: ~$160T US household net worth; a 2% levy ≈ ~$3.2T/yr ≈ ~11% of GDP. Federal Reserve Financial Accounts (Z.1) scale; exact figures to be pinned. Prose-only sanity check — NOT a model output, kept out of the frontier math. |
 
 ## Open audit items
 

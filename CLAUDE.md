@@ -133,7 +133,7 @@ surfaces (the self-explaining front door and the audit trail), its manuscript, i
 verification script, and its claim ledger all live here.
 
 ## Standing context (edit per dossier)
-- Open claims: 18 claims entered 2026-07-29 (C01–C18) in claim_ledger.csv,
+- Open claims: 19 claims entered 2026-07-29 (C01–C19) in claim_ledger.csv,
   none yet verified. C13 (the Commonwealth Protocol's falsifiable core, EST) is now
   EXECUTABLE-VERIFIED AS A MODEL — the flow-of-funds model lives in
   verification/flow_model.py, writes commonwealth_model.json, and is re-checked from
@@ -236,7 +236,12 @@ the global-mean-wealth ceiling is ~$1,908/yr — just under the $2,000 floor tie
     Part II (the Commonwealth blueprint) → Part III (The Limit) → Part I (the survey).
     Part III (DRAFTED 2026-07-29) is the dossier's central finding — the binding
     constraint is political, not technical (participation constraint C16 derived;
-    non-adoption C17; three no-state routes with time-to-tier C18). Part II is the
+    non-adoption C17; three no-state routes with time-to-tier C18; and the per-country
+    decomposition C19 — at 2% the US mean ($696k, UBS 2026) clears the living-wage tier
+    (~$13,900/yr, the ONLY scenario that does) while the US median ($69k) is only
+    poverty-relevant (~$1,380/yr), so living-wage UBI is resource-feasible in rich countries
+    and infeasible globally — the binding constraint there is political, completing the thesis:
+    the one place the arithmetic clears the bar is a place that has not done it). Part II is the
     candidate blueprint, drafted
     entirely as EXPLORATORY-CONJECTURE: a four-layer stack (firewalled personhood
     registry / zero-issuance treasury / covenant wrapper with a Weyl–Zhang

@@ -261,7 +261,7 @@
     // axes
     line(out, g.L, g.T, g.L, g.B, CH.axis, 1.5);
     line(out, g.L, g.B, g.R, g.B, CH.axis, 1.5);
-    var xt = [100, 1000, 10000, 100000, 200000];
+    var xt = [100, 1000, 10000, 100000, 1000000];
     for (var xi = 0; xi < xt.length; xi++) {
       if (xt[xi] < sc.xmin || xt[xi] > sc.xmax) continue;
       var xx = sc.X(xt[xi]);
@@ -293,12 +293,15 @@
     var xmid = (g.L + g.R) / 2;
     for (var si = 0; si < scen.length; si++) {
       var s = scen[si], px = sc.X(s.w), py = sc.Y(s.d), right = px > xmid;
-      out.push({ tag: "circle", attrs: { cx: r2(px), cy: r2(py), r: 5, fill: CH.dot, stroke: "#ffffff", "stroke-width": 1.5 } });
-      txt(out, px + (right ? -9 : 9), py + (si % 2 ? 15 : -9), "lf-tick", C.ink, right ? "end" : "start", str(s.label, s.name));
+      var hi = !!s.highlight;   // the one scenario that clears the living-wage tier
+      out.push({ tag: "circle", attrs: { cx: r2(px), cy: r2(py), r: hi ? 7 : 5, fill: hi ? C.teal : CH.dot, stroke: "#ffffff", "stroke-width": 1.5 } });
+      txt(out, px + (right ? -9 : 9), py + (si % 2 ? 15 : -9), "lf-tick", hi ? C.teal : C.ink, right ? "end" : "start", str(s.label, s.name));
     }
     // the honest-ceiling annotation, tucked in the empty band between the floor and
     // living-wage lines on the left (no curve reaches that high at low W/P)
     txt(out, g.L + 28, sc.Y(5200), "lf-tick", CH.dot, "start", str(spec.ceilingNote, ""));
+    // optional highlight note (teal), placed in the empty upper-left of the living-wage band
+    if (spec.highlightNote) txt(out, g.L + 40, sc.Y(18000), "lf-tick", C.teal, "start", str(spec.highlightNote, ""));
     return { W: W, H: H, ariaLabel: str(spec.title, "The Commonwealth Protocol viability frontier"), nodes: out };
   }
 
