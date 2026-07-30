@@ -79,6 +79,35 @@ def d_firstyear(tau, w_per_p):
     return (1.0 - RHO) * tau * w_per_p
 
 
+def flow_components(tau, w_per_p):
+    """Per-member annual flow decomposition at the MATURE STEADY STATE — the state the
+    frontier's 'sustained' dividend refers to. The treasury has grown until its yield
+    exactly replaces the retained levy (T/P = rho*tau*W/P / y), so the treasury is stable
+    and the dividend equals the FULL levy flow:
+        levy_paid        = tau*W/P                       # holder pays this per member/yr
+        levy_to_dividend = (1-rho)*tau*W/P               # paid straight through
+        levy_to_treasury = rho*tau*W/P                   # retained to grow T
+        yield_component  = y*T/P = rho*tau*W/P            # mature-T yield (== retained)
+        dividend_total   = levy_to_dividend + yield_component = tau*W/P  (== d_sustained)
+    So the loop is honest and closed: in (levy) splits into paid-out + retained; the mature
+    treasury's yield tops the dividend back up to the full levy flow. The figure reads every
+    one of these off THIS block — it never re-derives the economics."""
+    levy_paid = tau * w_per_p
+    levy_to_dividend = (1.0 - RHO) * tau * w_per_p
+    levy_to_treasury = RHO * tau * w_per_p
+    t_per_p = (levy_to_treasury / Y) if Y else 0.0
+    yield_component = Y * t_per_p
+    dividend_total = levy_to_dividend + yield_component
+    return {
+        "levy_paid": round(levy_paid, 6),
+        "levy_to_dividend": round(levy_to_dividend, 6),
+        "levy_to_treasury": round(levy_to_treasury, 6),
+        "treasury_per_member": round(t_per_p, 6),
+        "yield_component": round(yield_component, 6),
+        "dividend_total": round(dividend_total, 6),
+    }
+
+
 def build_scenarios():
     out = []
     for s in SCENARIOS_IN:
@@ -95,6 +124,7 @@ def build_scenarios():
             "d_sustained": round(d_sustained(TAU_EVAL, w_per_p), 6),
             "d_firstyear": round(d_firstyear(TAU_EVAL, w_per_p), 6),
             "tier": tier_of(d_sustained(TAU_EVAL, w_per_p)),
+            "flow": flow_components(TAU_EVAL, w_per_p),
         }
         if "note" in s:
             row["note"] = s["note"]
@@ -145,6 +175,15 @@ def build_model():
         "constants": {
             "tau_min": TAU_MIN, "tau_max": TAU_MAX, "tau_evasion_threshold": TAU_EVASION,
             "y": Y, "rho": RHO, "tau_eval": TAU_EVAL, "frontier_tau": FRONTIER_TAU,
+        },
+        "flow_formulas": {
+            "_note": "Per-member annual flows at the mature steady state; the figure computes these from tau, W/P, rho, y — never its own economics.",
+            "levy_paid": "tau * W_per_P",
+            "levy_to_dividend": "(1 - rho) * tau * W_per_P",
+            "levy_to_treasury": "rho * tau * W_per_P",
+            "treasury_per_member": "rho * tau * W_per_P / y",
+            "yield_component": "y * treasury_per_member  (== levy_to_treasury at steady state)",
+            "dividend_total": "levy_to_dividend + yield_component  (== tau * W_per_P == d_sustained)",
         },
         "tiers": TIERS,
         "frontier": build_frontier(),

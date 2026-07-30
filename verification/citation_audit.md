@@ -111,6 +111,72 @@ audited state.
     ~$2,000/person recently) supports the anchor.
     *Backs:* C15 (floor tier threshold).
 
+12. **Vicente, B.M. (2023), "Web3-enabled Harbergeorgism: A Policy Mechanism for Charter
+    Cities" — Charter Cities Institute Research Paper, Jan 2023 — resolve the citation.**
+    The strongest C10 near-miss. Confirm venue/date and the four distinguishing facts used
+    in Part II: Harberger+Georgist levy on tokenized LAND funding a citizens' dividend, but
+    partly issuance-funded, two-token, no personhood firewall, no chartalist anchor, no
+    stability frontier.
+    *Backs:* C10 (nearest-neighbor distinction).
+
+13. **Rallo, J.R. (2020), "Georg Friedrich Knapp Was Not a 'Chartalist'" — History of
+    Political Economy 52(4):773–793, DOI 10.1215/00182702-8604033 — verify.**
+    The pay-community reading of Knapp that licenses Part II's element (iv), the chartalist
+    demand anchor. Confirm DOI/pages and that the reading is represented faithfully.
+    *Backs:* C10 / Part II "What is and is not new" (the load-bearing novelty).
+
+14. **Bruenig, M. (2018), "Social Wealth Fund for America" — People's Policy Project — verify.**
+    A yield-dividend per-person right, but statist, off-chain, and levy-free. Confirm the
+    citation and the distinction (ours replaces state acquisition with the covenant levy).
+    *Backs:* C10 (nearest-neighbor distinction).
+
+15. **Manual check OPEN: cleisme.org (fringe French monnaie-libre variant).**
+    Not yet read in full. A self-assessed levy on tokenized RWAs routed to a personhood-gated
+    no-mint dividend there would trip the C10 KILL-trigger (below). Read and record.
+    *Backs:* C10 (residual novelty risk).
+
+16. **Manual check OPEN: Ğ1 / Duniter governance forums (French).**
+    Proposals in the forums could contain an un-indexed design closer than the published
+    corpus. Skim for the KILL-trigger and record.
+    *Backs:* C10 (residual novelty risk).
+
+## C10 novelty search trail (2026-07-29)
+
+Deep prior-art search behind C10's TO-OUR-KNOWLEDGE label. VERDICT: **C10 survives as scoped.**
+
+**Coverage.** Databases/venues: SSRN, NBER, arXiv, the RadicalxChange orbit, Ethereum
+research forums, the charter-cities literature, and the French *monnaie-libre* corpus
+(TRM / Duniter / Ğ1) **searched in French**. Two manual checks remain open (items 15–16).
+
+**KILL-trigger benchmark.** Any single work, even low-quality, that imposes a self-assessed
+levy on tokenized real-world assets, routes the proceeds to a personhood-gated no-mint
+dividend, payable in that same token → **C10 downgrades to elements (iii)+(iv) only.** None
+found; the two open manual checks are the only places one could still surface.
+
+**Near-miss catalogue (full citations).**
+- **Vicente, B.M. (2023).** Web3-enabled Harbergeorgism: A Policy Mechanism for Charter Cities.
+  Charter Cities Institute Research Paper (Jan 2023). *Strongest near-miss:* Harberger+Georgist
+  levy on tokenized LAND funding a citizens' dividend — but partly issuance-funded, two-token,
+  no personhood firewall, no chartalist anchor, no stability frontier.
+- **Posner, E.A. & Weyl, E.G. (2017).** Property Is Only Another Name for Monopoly. Journal of
+  Legal Analysis 9(1):51–123, DOI 10.1093/jla/lax001; and *Radical Markets* (2018). COST social
+  dividend — off-chain, national, no chartalist anchor, no RWA wrapper.
+- **de la Rouviere (2018); Riady (2018).** One-sentence gestures at Harberger-revenue-as-UBI; no
+  mechanism design.
+- **Geo Web SALSA.** Deployed self-assessed licensing on DIGITAL land; no dividend.
+- **1Hive / Duncan, "Harberger Taxation and Open Source."** Software-license levy funding a
+  "digital commonwealth" with per-person governance shares — nearest on naming and per-person
+  distribution; not an RWA levy, not a yield dividend.
+- **Circles; Ğ1 / Relative Theory of Money; Encointer; GoodDollar.** Personhood dividends, ALL
+  minting-funded — they *invert* our zero-issuance invariant.
+- **Bruenig, M. (2018).** Social Wealth Fund for America. People's Policy Project. Dividend-from-
+  yield per-person right; statist, off-chain, levy-free.
+- **Rallo, J.R. (2020).** Georg Friedrich Knapp Was Not a "Chartalist." HOPE 52(4):773–793, DOI
+  10.1215/00182702-8604033. The pay-community reading of Knapp — the theoretical seed of our
+  element (iii)/(iv), never coupled to a levy or a dividend.
+- **French corpus (TRM/Duniter/monnaie-libre, searched in French).** Currency-issuance only; no
+  extension to non-currency assets.
+
 ## Closing the audit
 
 When an item resolves, update the associated ledger row's status (OPEN →

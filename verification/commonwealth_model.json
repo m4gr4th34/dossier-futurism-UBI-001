@@ -14,6 +14,15 @@
       0.03
     ]
   },
+  "flow_formulas": {
+    "_note": "Per-member annual flows at the mature steady state; the figure computes these from tau, W/P, rho, y — never its own economics.",
+    "levy_paid": "tau * W_per_P",
+    "levy_to_dividend": "(1 - rho) * tau * W_per_P",
+    "levy_to_treasury": "rho * tau * W_per_P",
+    "treasury_per_member": "rho * tau * W_per_P / y",
+    "yield_component": "y * treasury_per_member  (== levy_to_treasury at steady state)",
+    "dividend_total": "levy_to_dividend + yield_component  (== tau * W_per_P == d_sustained)"
+  },
   "tiers": [
     {
       "key": "poverty-relevant",
@@ -161,7 +170,15 @@
       "tau": 0.02,
       "d_sustained": 20.0,
       "d_firstyear": 16.0,
-      "tier": "symbolic"
+      "tier": "symbolic",
+      "flow": {
+        "levy_paid": 20.0,
+        "levy_to_dividend": 16.0,
+        "levy_to_treasury": 4.0,
+        "treasury_per_member": 266.666667,
+        "yield_component": 4.0,
+        "dividend_total": 20.0
+      }
     },
     {
       "name": "Ring 1-2 stretch",
@@ -171,7 +188,15 @@
       "tau": 0.02,
       "d_sustained": 1000.0,
       "d_firstyear": 800.0,
-      "tier": "poverty-relevant"
+      "tier": "poverty-relevant",
+      "flow": {
+        "levy_paid": 1000.0,
+        "levy_to_dividend": 800.0,
+        "levy_to_treasury": 200.0,
+        "treasury_per_member": 13333.333333,
+        "yield_component": 200.0,
+        "dividend_total": 1000.0
+      }
     },
     {
       "name": "Global median wealth",
@@ -181,7 +206,15 @@
       "tau": 0.02,
       "d_sustained": 160.0,
       "d_firstyear": 128.0,
-      "tier": "symbolic"
+      "tier": "symbolic",
+      "flow": {
+        "levy_paid": 160.0,
+        "levy_to_dividend": 128.0,
+        "levy_to_treasury": 32.0,
+        "treasury_per_member": 2133.333333,
+        "yield_component": 32.0,
+        "dividend_total": 160.0
+      }
     },
     {
       "name": "Global mean wealth",
@@ -192,6 +225,14 @@
       "d_sustained": 2000.0,
       "d_firstyear": 1600.0,
       "tier": "floor",
+      "flow": {
+        "levy_paid": 2000.0,
+        "levy_to_dividend": 1600.0,
+        "levy_to_treasury": 400.0,
+        "treasury_per_member": 26666.666667,
+        "yield_component": 400.0,
+        "dividend_total": 2000.0
+      },
       "note": "ceiling row; mean-wealth source TO-VERIFY in citation_audit.md"
     }
   ],

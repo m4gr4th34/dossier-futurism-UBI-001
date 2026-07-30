@@ -84,6 +84,23 @@ def main():
                 ok_frontier = False
     check("model frontier: every d == tau*w", ok_frontier)
 
+    # (5) flow decomposition (the mini-loop's numbers) closes EXACTLY, and its dividend equals
+    #     the frontier value at that point — so the loop labels can never drift from the chart.
+    ok_split = ok_div = ok_yield = True
+    for s in M["scenarios"]:
+        fl = s.get("flow", {})
+        if not approx(fl.get("levy_to_dividend", 0) + fl.get("levy_to_treasury", 0), fl.get("levy_paid", -1)):
+            ok_split = False
+        if not approx(fl.get("yield_component", -1), fl.get("levy_to_treasury", 0)):
+            ok_yield = False
+        # dividend_total == frontier value at the scenario's point (== d_sustained), exact.
+        if not (approx(fl.get("dividend_total", -1), s["d_sustained"])
+                and approx(fl.get("dividend_total", -1), round(s["tau"] * s["w_per_p"], 6))):
+            ok_div = False
+    check("flow: levy_to_dividend + levy_to_treasury == levy_paid (every scenario)", ok_split)
+    check("flow: yield_component == levy_to_treasury at steady state (every scenario)", ok_yield)
+    check("flow: dividend_total == frontier value (d_sustained) at the point (every scenario)", ok_div)
+
     print("\n" + ("%d FAILURE(S)." % fails if fails else "all lockstep checks passed."))
     return 1 if fails else 0
 

@@ -369,27 +369,57 @@
     var cst = spec.constants || {}, rho = num(cst.rho, 0.2);
     var tiers = arr(spec.tiers), scen = arr(spec.scenarios);
 
-    // static chart (identical geometry to the sealed poster)
+    // static chart (identical geometry to the sealed poster), rendered into a TALLER live
+    // canvas so a labeled flow diagram sits in a panel BELOW the frontier. The poster stays
+    // frontier-only (buildEngine has no loop); the panel is live-only.
     var f = buildEngine(spec);
-    var svg = el("svg", { viewBox: "0 0 " + f.W + " " + f.H, width: "100%", "class": "lf-svg", role: "img", "aria-label": f.ariaLabel });
+    var LH = 820;
+    var svg = el("svg", { viewBox: "0 0 " + f.W + " " + LH, width: "100%", "class": "lf-svg", role: "img", "aria-label": f.ariaLabel + " — with a live flow diagram of where the dividend comes from" });
     for (var i = 0; i < f.nodes.length; i++) { var n = f.nodes[i], nd = el(n.tag, n.attrs); if (n.text != null) nd.textContent = n.text; svg.appendChild(nd); }
 
-    // live "you are here" marker
+    // live "you are here" marker on the chart
     var halo = el("circle", { cx: -99, cy: -99, r: 12, fill: "none", stroke: "#cf5d36", "stroke-width": 1.5, opacity: 0.5 });
     var mark = el("circle", { cx: -99, cy: -99, r: 7, fill: "#cf5d36", stroke: "#ffffff", "stroke-width": 2 });
     svg.appendChild(halo); svg.appendChild(mark);
 
-    // animated demand loop (reuses loopPoints — no duplicated geometry) in the low-left corner
-    var lp = loopPoints(182, 372, 430, 46), order = [lp.R, lp.A, lp.T, lp.R];
-    for (var e = 0; e < 3; e++) svg.appendChild(el("line", { x1: order[e].x, y1: order[e].y, x2: order[e + 1].x, y2: order[e + 1].y, stroke: C.boxln, "stroke-width": 1.2, "stroke-linecap": "round" }));
-    var loopLab = el("text", { x: 182, y: 448, "class": "lf-tick", fill: C.ink2, "text-anchor": "middle" });
-    loopLab.textContent = "the loop, live"; svg.appendChild(loopLab);
-    var toks = [];
-    for (var t2 = 0; t2 < 3; t2++) { var tk = el("circle", { cx: -9, cy: -9, r: 3.2, fill: C.div }); svg.appendChild(tk); toks.push(tk); }
+    // ---- flow-diagram panel: "Where the number comes from" (SAME triangle roles as
+    //      commonwealth-loop, via the shared loopPoints — no duplicated geometry) ----
+    var Lc = loopPoints(470, 648, 748, 180), R = Lc.R, A = Lc.A, T = Lc.T;
+    var order = [R, A, T, R];   // cycle: Recipients -> Asset holders -> Treasury -> Recipients
+    var LN = [];
+    line(LN, g.L, 576, g.R, 576, C.boxln, 1, "3 5");
+    txt(LN, g.L, 600, "lf-axis", C.ink, "start", "Where the number comes from");
+    txt(LN, g.L, 618, "lf-tick", C.ink2, "start", "The chart shows the result; this shows the machine. Same sliders, same dollars.");
+    arrow(LN, 510, 666, 612, 730, C.slate, 2);    // sell (R -> A)
+    arrow(LN, 572, 748, 368, 748, C.levy, 2.4);   // levy (A -> T)
+    arrow(LN, 330, 730, 432, 666, C.div, 2.4);    // dividend (T -> R)
+    rrect(LN, R.x - 82, R.y - 20, 164, 40, C.boxfill, C.boxln, 1.5, 10);
+    txt(LN, R.x, R.y - 2, "lf-axis", C.ink, "middle", "Recipients");
+    txt(LN, R.x, R.y + 14, "lf-tick", C.ink2, "middle", "verified humans");
+    rrect(LN, A.x - 78, A.y - 18, 156, 40, C.boxfill, C.boxln, 1.5, 10);
+    txt(LN, A.x, A.y, "lf-axis", C.ink, "middle", "Asset holders");
+    txt(LN, A.x, A.y + 16, "lf-tick", C.ink2, "middle", "wrapped assets");
+    rrect(LN, T.x - 78, T.y - 18, 156, 40, C.boxfill, C.boxln, 1.5, 10);
+    txt(LN, T.x, T.y, "lf-axis", C.ink, "middle", "Treasury");
+    txt(LN, T.x, T.y + 16, "lf-tick", C.ink2, "middle", "no minting");
+    for (var li = 0; li < LN.length; li++) { var lo = LN[li], le = el(lo.tag, lo.attrs); if (lo.text != null) le.textContent = lo.text; svg.appendChild(le); }
+
+    // LIVE arrow/treasury labels — recomputed each slider/chip change from the SAME dSus the
+    // marker + readout use (not a re-derivation). Dividend label shares the chart accent (teal).
+    var sellLab = el("text", { x: 748, y: 682, "class": "lf-tick", fill: C.ink2, "text-anchor": "end" }); svg.appendChild(sellLab);
+    var sellSub = el("text", { x: 748, y: 698, "class": "lf-tick", fill: C.ink2, "text-anchor": "end" }); sellSub.textContent = "(holders need tokens to pay the levy)"; svg.appendChild(sellSub);
+    var levyLab = el("text", { x: 470, y: 740, "class": "lf-tick", fill: C.levy, "text-anchor": "middle" }); svg.appendChild(levyLab);
+    var divLab = el("text", { x: 322, y: 690, "class": "lf-axis", fill: C.div, "text-anchor": "end" }); svg.appendChild(divLab);
+    var treasSplit = el("text", { x: T.x, y: 792, "class": "lf-tick", fill: C.ink2, "text-anchor": "middle" }); svg.appendChild(treasSplit);
+    var treasYield = el("text", { x: T.x, y: 808, "class": "lf-tick", fill: C.teal, "text-anchor": "middle" }); svg.appendChild(treasYield);
+
+    // flow tokens: 1 per edge, CONSTANT slow pace, directional (indicates the cycle, not the rate)
     function loopPos(p) {
       var pe = ((p % 3) + 3) % 3, ee = Math.floor(pe), fr = pe - ee, a = order[ee], b = order[ee + 1];
       return { x: a.x + (b.x - a.x) * fr, y: a.y + (b.y - a.y) * fr };
     }
+    var toks = [];
+    for (var t2 = 0; t2 < 3; t2++) { var tk = el("circle", { cx: -9, cy: -9, r: 3.4, fill: C.div }); svg.appendChild(tk); toks.push(tk); }
 
     container.appendChild(svg);
 
@@ -409,12 +439,23 @@
     var state = { tau: num(cst.tau_eval, 0.02), w: 50000 };
     function update() {
       var dSus = state.tau * state.w, dFy = (1 - rho) * state.tau * state.w;
+      var levy = state.tau * state.w;            // levy_paid = tau*W/P (== dSus)
+      var toDiv = (1 - rho) * state.tau * state.w;  // levy_to_dividend
+      var retained = rho * state.tau * state.w;     // levy_to_treasury (== mature-treasury yield)
       var mx = sc.X(state.w), my = sc.Y(dSus);
       mark.setAttribute("cx", r2(mx)); mark.setAttribute("cy", r2(my));
       halo.setAttribute("cx", r2(mx)); halo.setAttribute("cy", r2(my));
       tauF.val.textContent = r2(state.tau * 100) + "%";
       wF.val.textContent = money(Math.round(state.w));
-      readout.textContent = "$" + commas(dSus) + "/yr sustained · $" + commas(dFy) + " first-year · tier: " + tierOf(dSus);
+      // teal-accent the sustained figure so it visually matches the loop's dividend arrow
+      readout.innerHTML = '<span style="color:#0c8f86">$' + commas(dSus) + '/yr sustained</span> · $'
+        + commas(dFy) + ' first-year · tier: ' + tierOf(dSus);
+      // live loop labels — dividend is the SAME dSus as the marker/readout
+      sellLab.textContent = "sell tokens ≈ $" + commas(dSus) + "/yr";
+      levyLab.textContent = "levy $" + commas(levy) + "/yr per member";
+      divLab.textContent = "dividend $" + commas(dSus) + "/yr";
+      treasSplit.textContent = "of levy: $" + commas(toDiv) + " out · $" + commas(retained) + " retained";
+      treasYield.textContent = "+ mature-treasury yield $" + commas(retained) + "/yr";
     }
     tauF.input.addEventListener("input", function () { state.tau = parseFloat(tauF.input.value) / 100; update(); });
     wF.input.addEventListener("input", function () { state.w = sliderToW(parseFloat(wF.input.value)); update(); });
@@ -430,18 +471,20 @@
     }
     tauF.input.value = state.tau * 100; wF.input.value = wToSlider(state.w); update();
 
-    // animate the loop; speed proportional to the levy flow tau*W/P. Stops itself once the
-    // lightbox closes and detaches the SVG (isConnected guard) — no leaked rAF.
-    var p = 0, last = null;
+    // token dots drift at a CONSTANT slow pace around the cycle — direction only (they show
+    // which way value flows; the labels carry the magnitudes). Stops itself when the lightbox
+    // closes and detaches the SVG (isConnected guard) — no leaked rAF. Reduced motion -> parked.
+    var p = 0, last = null, SPEED = 0.35;  // edges/sec, fixed (no rate scaling)
+    function place(pp) { for (var t = 0; t < toks.length; t++) { var q = loopPos(pp + t); toks[t].setAttribute("cx", r2(q.x)); toks[t].setAttribute("cy", r2(q.y)); } }
     if (DossierFigures.prefersReducedMotion()) {
-      for (var t3 = 0; t3 < toks.length; t3++) { var pp = loopPos(t3); toks[t3].setAttribute("cx", r2(pp.x)); toks[t3].setAttribute("cy", r2(pp.y)); }
+      place(0);
     } else {
       var frame = function (ts) {
         if (!svg.isConnected) return;
         if (last == null) last = ts;
         var dt = Math.min((ts - last) / 1000, 0.05); last = ts;
-        p += dt * (0.4 + Math.min(state.tau * state.w / 1500, 3.0));
-        for (var t = 0; t < toks.length; t++) { var q = loopPos(p + t); toks[t].setAttribute("cx", r2(q.x)); toks[t].setAttribute("cy", r2(q.y)); }
+        p += dt * SPEED;
+        place(p);
         requestAnimationFrame(frame);
       };
       requestAnimationFrame(frame);

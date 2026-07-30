@@ -152,11 +152,11 @@ verification script, and its claim ledger all live here.
   only when that audit re-checks them. Author judgments C04, C06, C07 and the
   central challenge C08 are OPEN-UNVERIFIED. The asset-redistribution mechanism is
   split: C09 is EXPLORATORY-CONJECTURE (the synthesis) and C10 is NOVEL /
-  TO-OUR-KNOWLEDGE (nothing published couples non-currency asset redistribution to
-  a per-person dividend with a stability analysis + attack surface), with the
-  search scope and date recorded in C10's verifier field (prior-art search
-  2026-07-29, ~12 English-language web searches; a deeper SSRN/NBER + French
-  monnaie-libre pass is still owed). The buckets, as entered: documented crypto-UBI
+  TO-OUR-KNOWLEDGE — NARROWED and GROUNDED 2026-07-29 to the four-element combination
+  (RWA-wrapper levy / zero-issuance dividend / chartalist single-token anchor /
+  computed frontier) by the deep prior-art search, whose full trail, near-miss
+  catalogue, and KILL-trigger live in citation_audit.md and whose dated scope is in
+  C10's verifier field (two minor manual French checks remain open). The buckets, as entered: documented crypto-UBI
   attempts and outcomes (Worldcoin/WLD, GoodDollar, Circles UBI, Proof of
   Humanity's UBI token, Duniter/Ğ1 and the Relative Theory of Money), UBI pilot
   labor-supply results (Finland 2017–18, GiveDirectly Kenya, Stockton SEED, Alaska
@@ -232,18 +232,23 @@ verification script, and its claim ledger all live here.
     guards the figure spec against drift). Part I remains self-contained by design —
     it back-references nothing and must survive being pushed down and later frozen as
     its own DOI'd chapter.
-  - Next work item before ANY status changes: the deeper C10 novelty search
-    (SSRN/NBER + French monnaie-libre corpus). The flow-of-funds parameterization is
-    now DONE (flow_model.py + verify_numbers.py #4–#6), so C13 is executable-verified
-    as a model; the novelty search is the last gate owed before any status upgrade.
-  - Novelty-claim gate: the deeper novelty search (SSRN/NBER + the French
-    monnaie-libre corpus) is REQUIRED before C10 is asserted in any blueprint
-    prose. It now has a PRECISE target — the exact closed loop Part II describes:
-    covenant-wrapped assets whose depreciating-license levy is payable only in the
-    token that funds a per-person dividend, under a zero-issuance treasury beside a
-    firewalled personhood registry. Until that search runs, C10 stays NOVEL /
-    TO-OUR-KNOWLEDGE with its scope and date in the verifier field; do not upgrade
-    it on the strength of the first ~12-search pass alone.
+  - Novelty-claim gate: DONE and integrated. The deep C10 novelty search ran
+    2026-07-29 (SSRN/NBER/arXiv + RadicalxChange orbit + Ethereum research +
+    charter-cities literature + French monnaie-libre corpus, searched in French).
+    VERDICT: C10 SURVIVES as scoped. C10 was NARROWED to the four-element combination
+    (RWA-wrapper levy / zero-issuance dividend / chartalist single-token anchor /
+    computed frontier) with the full near-miss catalogue + KILL-trigger benchmark in
+    citation_audit.md; its verifier field now carries the dated trail. Strongest
+    near-miss: Vicente 2023 (land, partly issuance-funded, two-token, no chartalist
+    anchor). C10 stays NOVEL / TO-OUR-KNOWLEDGE — now GROUNDED by the dated trail,
+    not merely asserted. Two minor manual checks remain OPEN (cleisme.org, Ğ1 forums).
+  - Remaining audit work (does NOT block a status upgrade of C10's novelty, but owed
+    before release): the cite-card verification items in citation_audit.md
+    (incl. Vicente 2023, Rallo 2020, Bruenig 2018, the global-wealth figures, and the
+    Part I CITE rows) and the two open manual French checks.
+  - Next milestone — author's choice: (1) an adversarial red-team pass on the whole
+    dossier (Part I + the Commonwealth blueprint + the model), or (2) first release
+    (tag → Zenodo DOI + OpenTimestamps). No further modeling gate is outstanding.
   - C08 success criteria: when the blueprint finalizes the central challenge, its
     quantitative success criteria MUST include all four legs — a purchasing-power
     criterion, a scale criterion, velocity/sink data, and a labor-market criterion.
