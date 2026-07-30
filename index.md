@@ -52,9 +52,9 @@ The model that turns this into arithmetic — its parameter ranges are engineeri
 
 ### Entry by rings — earning the way to property
 
-*(figure: Entry by rings: earning the way from protocol-native assets out to real property — Ring 1 (protocol-native assets — namespaces, blockspace, protocol land) enforces perfectly by code and bootstraps the system. Ring 2 (tokenized financial assets) enforces strongly via issuer covenants, drawn in by listing plus aggregated dividend-recipient demand. Ring 3 (real property) works only where a jurisdiction adopts the covenant — the minimal-leviathan ring. On-chain title has historically worked only where the state already worked (Georgia), not where it did not (Honduras).)*
+*(figure: Entry by rings: earning the way from protocol-native assets out to real property — Ring 1 (protocol-native assets — namespaces, blockspace, protocol land) enforces perfectly by code and bootstraps the system. Ring 2 (tokenized financial assets) enforces strongly via issuer covenants, drawn in by listing plus aggregated dividend-recipient demand. Ring 3 (real property) splits: route 3a acquires assets under ordinary contract law with no new state role; route 3b reaches scale fast only if a jurisdiction adopts the covenant. On-chain title has historically worked only where the state already worked (Georgia), not where it did not (Honduras). Part III works the split.)*
 
-The record forbids leading with real property: blockchain land registries succeeded where states already functioned (Georgia — political buy-in, modern records) and died where they did not (Honduras — political resistance; Sweden — pilot concluded, never implemented). So the design earns its way inward-out. For Ring 3 the claim is stated exactly: the protocol does not replace the leviathan; it hands the smallest possible leviathan a redistribution instrument that runs itself. The premise's question — how small can the leviathan get — is answered ring by ring: zero, issuer-sized, registry-sized.
+The record forbids leading with real property: blockchain land registries succeeded where states already functioned (Georgia — political buy-in, modern records) and died where they did not (Honduras — political resistance; Sweden — pilot concluded, never implemented). So the design earns its way inward-out. For Ring 3 the claim is stated exactly: the protocol does not replace the leviathan; it hands the smallest possible leviathan a redistribution instrument that runs itself. The premise's question — how small can the leviathan get — is answered ring by ring: zero, issuer-sized, registry-sized. And Ring 3 itself splits, once the participation constraint is worked in Part III: route 3a acquires real assets under ordinary contract law with no new state role at all, and only route 3b — jurisdictional adoption — needs the leviathan, for speed rather than for possibility.
 
 ### The falsifiable core
 
@@ -102,6 +102,46 @@ The narrowed claim, stated exactly (`C10`): to our knowledge, no published work 
 
 **1Hive / Duncan, Harberger Taxation and Open Source.** The nearest on naming and on per-person distribution: a self-assessed levy on software licenses funding a "digital commonwealth," with per-person governance shares. But the levy is on software, not real-world assets plus yield, and its per-person shares are *governance* rights. In the Commonwealth the registry's members hold the dividend right ONLY and govern nothing — the constitutional firewall the Proof of Humanity fork war exists to justify.
 
+## PART III — THE LIMIT: what needs a state, what doesn't, and what each costs
+
+**THE FINDING — this part states the dossier's central result: the binding constraint is political, not technical. It is derived, labeled, and attackable.**
+
+### The participation constraint
+
+The covenant is voluntary, so ask when a rational holder of wealth W joins it. Wrapping costs the levy τ·W each year and returns the dividend d plus whatever idiosyncratic benefit b the covenant confers per dollar wrapped — liquidity, clear title, market access. Entry is rational only when `b ≥ τ − d/W`. Two facts follow. Below a break-even wealth `W* = d/τ` — at τ=2% and a $1,000 dividend, **$50,000** — entry pays for itself even at b=0: the small holder is a net recipient and joins freely. Above it, the term d/W shrinks toward nothing: a holder of $1M pays **$20,000**/yr against a ~$1,000 dividend and needs b ≥ 1.9% to enter; at $10M, b ≥ 1.99%. For concentrated wealth the condition is simply b ≥ τ.
+
+So voluntary entry *adversely selects*: net recipients and weak assets — those whose owners most value the covenant's liquidity and title — flow in; concentrated wealth and strong assets stay out unless the private benefit happens to exceed the levy. A voluntary levy therefore cannot reach the wealth that redistribution most wants to reach. Redistributing existing concentrated wealth requires compulsion — a levy no one may decline — and a compulsory levy is a tax, which is a state monopoly. This is claim `C16`, derived from the premises stated above, and it is the dossier's hinge.
+
+*Technology cannot solve a participation constraint. It can only raise b — and b is bounded by what liquidity, title, and access are actually worth.*
+
+### Why polities don't adopt it either — without the ideology premise
+
+One might answer: then let a state run it. But the same constraint reappears as politics. Olson's logic of collective action (1965) is enough — a commons levy imposes concentrated costs on organized wealth-holders and spreads diffuse benefits over an unorganized many, so the concentrated side out-organizes the diffuse side and blocks adoption in *any* polity, whatever its professed ideology. The argument needs no claim about any nation's beliefs, which is exactly why it is robust. The confirming asymmetry is in the record: Alaska's dividend has survived four decades of ordinary politics *after* its creation — electorates keep a commons dividend once it exists — yet no polity has retrofitted one onto existing private wealth. Creation against incumbents is the barrier, not maintenance. This is claim `C17`.
+
+An honesty note, because the temptation here is to over-claim: whether a basic income at living-wage scale would raise or lower aggregate wealth is unproven in either direction — the pilots do not reach that regime (Part I's labor-supply limit, `C06`). This dossier asserts no growth promise. The limit it states is about who can adopt the mechanism, not about what the mechanism would do to output.
+
+### The three routes that need no one's permission
+
+If compulsion is off the table, the design does not die — it slows down. Three accumulation routes fund the dividend without ever violating the participation constraint, because none asks a reluctant holder to wrap.
+
+**Route 3a — acquisition under ordinary contract law.** Community land trusts already do this: the Champlain Housing Trust has run covenant-encumbered, resale-restricted (Georgist-flavored) tenure at the scale of thousands of homes for decades, using nothing but private property and contract law. The commonwealth's treasury — its retained levy plus protocol revenue — compounds into trust-held real assets the same way. The state's only role is enforcing contracts, which it does for everyone; no new political permission is required.
+
+**Route R — a protocol-revenue endowment.** The protocol's own infrastructure rents — blockspace, sequencer revenue, namespace fees — can fund the dividend with zero coercion. The revenue half already runs at scale: Optimism's Collective directs sequencer revenue to public goods through iterated retrospective funding. No one has yet pointed such an engine at a personhood-gated, no-mint dividend; doing so is the design's most immediately buildable route.
+
+**Route N — a new-commons constitution.** The cleanest route creates the asset inside the covenant, as Alaska's oil revenue was born inside its dividend. An asset class that never existed outside the commonwealth has no incumbent to out-organize and no exit to adversely select — the participation constraint simply never binds, because there was never an outside holder to decline.
+
+**Route 3b — jurisdictional adoption.** The fast branch survives, but relabeled: a jurisdiction that adopts the covenant reaches scale in one legislative act rather than decades of compounding. Part III's whole first half is the analysis of why that act is unlikely — it must be won against incumbents at a constitutional moment, not maintained afterward.
+
+### The cost is time
+
+The no-state routes buy their way past the participation constraint with time, and the model prices it. From today's Ring 1–2 base ($1,000 wrapped per member, a $20/yr dividend at τ=2%), holding membership constant, the dividend reaches the poverty-relevant tier in about **27 years** and the floor tier in about **48 years** at an endowment growth rate of 10%/yr; at 20%/yr, in about 14 and 25 years. The governing variable is the endowment growth rate g, not the levy rate τ — once the levy is set, time is bought with growth. Two honesty flags: g in the modeled 5–20% range is a young-protocol accretion assumption (protocol revenue plus retained levy plus new-commons formation), an author judgment in the `C14` family, not a market-return promise; and constant membership is a conservative simplification — a growing membership raises the bar and lengthens the wait. This is claim `C18`.
+
+### The conclusion, and the premise answered
+
+The technical objects exist. The registry, the zero-issuance invariant, the covenant levy, the chartalist anchor, the arithmetic and its ceiling — this dossier has built their composition and made it testable, and its own verifier re-derives every number on this page. What does not exist is the collective choice. The fast path opens only at constitutional moments, on new commons, before incumbents form; the slow path is open now, to anyone, and requires no permission — only patience measured in the growth rate of a commons.
+
+The premise asked whether there could be a plural consciousness with economic rules that hold a thriving economy and a life worth living in the same hand. The dossier's earned answer: the rules can be written and the machine can be run — the missing input is the consciousness itself. That is the limit. It is stated here not as a defeat, but as an address.
+
 **PART I · THE RECORD**
 
 ## PART I — THE RECORD: what has been tried, what failed, what held
@@ -122,6 +162,7 @@ Ledger snapshot, entered 2026-07-29 — twelve claims, none yet verified: six ar
 | The Commonwealth Protocol (Part II) | The candidate composition: covenant-wrapped assets whose depreciating-license levy is payable only in the token that pays a per-person dividend, under a zero-issuance treasury beside a firewalled personhood registry. Established ingredients (chartalism, Harberger/Weyl–Zhang, sovereign-wealth dividends); unproven as a whole. Falsifiable core: C13. Novelty (C10) now grounded by a dated 2026-07-29 prior-art search — see the audit trail. | EXPLORATORY-CONJECTURE | — | C09, C10 (search 2026-07-29), C13 |
 | The graveyard | Proof of Humanity's UBI token, Circles UBI, and Freicoin each failed on the demand side — value or acceptance — never on distribution. | OPEN-UNVERIFIED | — | C07 |
 | The central challenge | Whether protocol levers — issuance, demurrage, fee recycling, reserve backing — can sustain a UBI's real purchasing power while preserving work incentives; criteria to be set in the reserved blueprint. | OPEN-UNVERIFIED | — | C08 |
+| The Limit (Part III) | The dossier's central finding: a voluntary levy adversely selects (entry needs b >= tau - d/W, which fails for concentrated wealth), so redistributing existing concentrated wealth needs a state — but three no-state routes (contract-law acquisition, protocol-revenue endowment, new-commons constitution) fund the dividend anyway, at the cost of time. Derived + argued; red-team pending. | OPEN-UNVERIFIED | — | C16, C17, C18 |
 
 ## Consistency checks
 
@@ -133,8 +174,9 @@ Results from `verification/verify_numbers.py` — the same checks the in-page co
 - [PASS] C13 conservation: model outputs recompute exactly from raw inputs (0 mismatches)
 - [PASS] C13 scaling: tau=2%, $50k wrapped/member -> $1,000/yr levy and $800 first-year net; both quoted in the manuscript
 - [PASS] C13 ceiling: tau=2%, global-mean $100k/member -> $2,000/yr; quoted in the manuscript
+- [PASS] C16/C18 Part III: W*=$50,000 (d/tau), $1M holder pays $20,000 vs a ~$1,000 dividend, floor time-to-tier ~48 years at g=10%; all quoted in the manuscript
 
-**TOTAL: 6 checks · 6 pass · 0 fail** — All checks pass — the survey is internally consistent.
+**TOTAL: 7 checks · 7 pass · 0 fail** — All checks pass — the survey is internally consistent.
 
 ## 01 Proof of personhood — the binding constraint
 
@@ -213,3 +255,9 @@ The blueprint that will sit above this part must satisfy, at minimum: **(i) dema
 **Rallo, J.R. (2020).** Georg Friedrich Knapp Was Not a "Chartalist." History of Political Economy 52(4), 773–793. DOI 10.1215/00182702-8604033. The pay-community reading of Knapp — a currency holds value because obligations are payable in it, a logic a non-state pay-community can wield — which licenses the Commonwealth's chartalist demand anchor.
 
 **Bruenig, M. (2018).** Social Wealth Fund for America. People's Policy Project. A per-person dividend paid from the realized yield of a collectively-owned asset fund; statist, off-chain, and levy-free — the nearest yield-dividend right, distinguished by the Commonwealth's covenant levy and firewalled registry.
+
+**Olson, M. (1965).** The Logic of Collective Action: Public Goods and the Theory of Groups. Harvard University Press. The concentrated-costs / diffuse-benefits account of why small organized interests defeat large unorganized ones — the ideology-free basis for Part III's non-adoption argument (C17).
+
+**Davis, J.E. (ed.) (2010).** The Community Land Trust Reader. Lincoln Institute of Land Policy (card TO-VERIFY). Documents the community-land-trust model — covenant-encumbered, resale-restricted tenure under ordinary contract law — the precedent (e.g. the Champlain Housing Trust, thousands of homes over decades) for Part III's no-state acquisition route 3a.
+
+**Optimism Collective — Retroactive Public Goods Funding / sequencer-revenue documentation.** optimism.io governance docs (REPORTED grade; TO-VERIFY). A live, at-scale precedent for funding public goods from protocol (sequencer) revenue — the revenue half of Part III's protocol-endowment route R; no deployment yet points such revenue at a personhood-gated no-mint dividend.

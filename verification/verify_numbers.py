@@ -163,6 +163,25 @@ else:
     check("C13 ceiling: tau=2%, global-mean $100k/member -> $2,000/yr; quoted in the manuscript",
           d_sus_100k + poison6, 2000, 2000)
 
+    # (#7) Part III (C16/C18): re-derive the participation-constraint numbers and one time-to-tier
+    #      value, and assert the prose quotes them. W* = d_ref/tau = $50,000; a $1M holder pays
+    #      $20,000/yr against a ~$1,000 dividend (b_required -> tau); floor time-to-tier at g=10% ~48 yrs.
+    P = M.get("participation")
+    TT = (M.get("time_to_tier") or {}).get("rows", [])
+    if P:
+        w_star_re = round(P["d_ref"] / P["tau"], 6)             # 50,000
+        levy_1m = next((e["levy_paid"] for e in P["examples"] if e["w_i"] == 1_000_000), None)  # 20,000
+        floor_g10 = next((r.get("floor") for r in TT if abs(r["g"] - 0.10) < 1e-9), None)        # 48.3
+        poison7 = 0
+        if abs(w_star_re - P["w_star"]) > EPS: poison7 += 1
+        if levy_1m is None or abs(levy_1m - 20_000) > EPS: poison7 += 1
+        if floor_g10 is None or floor_g10 <= 0: poison7 += 1
+        if "$50,000" not in manuscript: poison7 += 10
+        if "$20,000" not in manuscript: poison7 += 10
+        if "48 years" not in manuscript: poison7 += 10   # the g=10% floor time-to-tier, quoted in Part III
+        check("C16/C18 Part III: W*=$50,000 (d/tau), $1M holder pays $20,000 vs a ~$1,000 dividend, floor time-to-tier ~48 years at g=10%; all quoted in the manuscript",
+              P["w_star"] + poison7, 50_000, 50_000)
+
 # ----------------------------------------------------------------
 print()
 n_fail = sum(1 for r in results if r[0] == FAIL)

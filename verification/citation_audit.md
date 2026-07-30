@@ -177,6 +177,30 @@ found; the two open manual checks are the only places one could still surface.
 - **French corpus (TRM/Duniter/monnaie-libre, searched in French).** Currency-issuance only; no
   extension to non-currency assets.
 
+17. **Olson, M. (1965), The Logic of Collective Action — Harvard University Press — verify.**
+    Confirm the citation and that the concentrated-costs / diffuse-benefits mechanism is
+    represented faithfully as the ideology-free basis for Part III's non-adoption argument.
+    *Backs:* C17 (Part III political-limit argument).
+
+18. **Community land trust model — Davis, J.E. (ed.) The Community Land Trust Reader — card `TO-VERIFY`.**
+    Resolve the exact citation and confirm the Champlain Housing Trust scale/duration claim
+    (thousands of homes over decades under ordinary contract law) used for Part III route 3a.
+    *Backs:* C18 (no-state acquisition route).
+
+19. **Optimism Collective sequencer-revenue / RetroPGF — REPORTED, `TO-VERIFY`.**
+    Confirm that sequencer revenue funds public goods at scale via retrospective funding, and
+    grade REPORTED (project/governance docs, not an independent evidentiary source). It is a
+    precedent for the REVENUE half of route R only, not for a dividend.
+    *Backs:* C18 (protocol-revenue endowment route).
+
+20. **Novelty re-check (extends the C10 trail): does any published work point a protocol-revenue
+    endowment at a personhood-gated, no-mint dividend?**
+    Part III route R is the most buildable and therefore the most likely to have a near-miss.
+    Run a quick targeted search at audit time (Optimism/RetroPGF + UBI/dividend + proof-of-personhood).
+    A hit routing protocol revenue to a personhood-gated no-mint dividend would extend the C10
+    near-miss catalogue (and, if it also carried an RWA levy, trip the C10 KILL-trigger).
+    *Backs:* C10 / C18 (residual novelty risk on route R).
+
 ## Closing the audit
 
 When an item resolves, update the associated ledger row's status (OPEN →

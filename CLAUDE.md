@@ -133,12 +133,20 @@ surfaces (the self-explaining front door and the audit trail), its manuscript, i
 verification script, and its claim ledger all live here.
 
 ## Standing context (edit per dossier)
-- Open claims: 15 claims entered 2026-07-29 (C01–C15) in claim_ledger.csv,
+- Open claims: 18 claims entered 2026-07-29 (C01–C18) in claim_ledger.csv,
   none yet verified. C13 (the Commonwealth Protocol's falsifiable core, EST) is now
   EXECUTABLE-VERIFIED AS A MODEL — the flow-of-funds model lives in
   verification/flow_model.py, writes commonwealth_model.json, and is re-checked from
-  raw inputs by verify_numbers.py #4–#6; its status stays OPEN-UNVERIFIED because a
-  model is a model, not reality. C14 (model parameter ranges — τ, y, ρ — are author
+  raw inputs by verify_numbers.py #4–#7; its status stays OPEN-UNVERIFIED because a
+  model is a model, not reality. Part III (The Limit) adds three claims that carry the
+  dossier's NOW-CENTRAL THESIS — the binding constraint is political, not technical:
+  C16 (participation constraint, type DERIV / status OPEN, red-team pending — a voluntary
+  levy adversely selects, so redistributing existing concentrated wealth needs a state),
+  C17 (collective-action non-adoption, EST / OPEN-UNVERIFIED, Olson + the Alaska
+  create-vs-maintain asymmetry), C18 (three no-state routes fund the dividend at the cost
+  of time, EST / OPEN-UNVERIFIED, governed by endowment growth g not by τ). Time-to-tier
+  (model): from the Ring 1–2 base at g=10%, ~27 yrs to poverty-relevant, ~48 to floor;
+  at g=20%, ~14 and ~25. C14 (model parameter ranges — τ, y, ρ — are author
   engineering judgments) and C15 (the $270 / $2,000 / $10,000 success tiers are
   author-chosen, anchored to cited magnitudes) are the two new EST / OPEN-UNVERIFIED
   rows those judgments live in. Recorded finding (model output under stated
@@ -218,9 +226,12 @@ verification script, and its claim ledger all live here.
     publishable, defensible spine is the honest separation of what pilots and
     deployed projects have demonstrated from what this design would still have to
     prove.
-  - Two-phase structure (as built): Part II (the candidate blueprint) is now
-    DRAFTED, 2026-07-29, sitting ABOVE Part I in editions/index.source.html — the
-    reserved slot is filled. It is the Commonwealth Protocol (working name), drafted
+  - Three-part structure (as built): top-to-bottom the front door now reads
+    Part II (the Commonwealth blueprint) → Part III (The Limit) → Part I (the survey).
+    Part III (DRAFTED 2026-07-29) is the dossier's central finding — the binding
+    constraint is political, not technical (participation constraint C16 derived;
+    non-adoption C17; three no-state routes with time-to-tier C18). Part II is the
+    candidate blueprint, drafted
     entirely as EXPLORATORY-CONJECTURE: a four-layer stack (firewalled personhood
     registry / zero-issuance treasury / covenant wrapper with a Weyl–Zhang
     depreciating-license levy / chartalist demand loop), an entry-by-rings adoption
@@ -242,13 +253,15 @@ verification script, and its claim ledger all live here.
     near-miss: Vicente 2023 (land, partly issuance-funded, two-token, no chartalist
     anchor). C10 stays NOVEL / TO-OUR-KNOWLEDGE — now GROUNDED by the dated trail,
     not merely asserted. Two minor manual checks remain OPEN (cleisme.org, Ğ1 forums).
-  - Remaining audit work (does NOT block a status upgrade of C10's novelty, but owed
-    before release): the cite-card verification items in citation_audit.md
-    (incl. Vicente 2023, Rallo 2020, Bruenig 2018, the global-wealth figures, and the
-    Part I CITE rows) and the two open manual French checks.
-  - Next milestone — author's choice: (1) an adversarial red-team pass on the whole
-    dossier (Part I + the Commonwealth blueprint + the model), or (2) first release
-    (tag → Zenodo DOI + OpenTimestamps). No further modeling gate is outstanding.
+  - Substantive drafting is COMPLETE (Parts I–III, the model, the figures). No modeling
+    or novelty gate is outstanding. Remaining work, IN ORDER, before release:
+    (1) close the citation audit — the cite-card verification items in citation_audit.md
+    (Vicente 2023, Rallo 2020, Bruenig 2018, Olson 1965, the CLT/Champlain and Optimism
+    cards, the global-wealth figures, the Part I CITE rows) plus the manual French checks
+    (cleisme.org, Ğ1 forums) and the route-R novelty re-check; then (2) an adversarial
+    red-team pass on the whole dossier (esp. C16's derivation, now DERIV/OPEN pending
+    exactly that); then (3) first release (tag → Zenodo DOI + OpenTimestamps). This is the
+    hardening sequence — the "Final substantive revision before hardening" is now done.
   - C08 success criteria: when the blueprint finalizes the central challenge, its
     quantitative success criteria MUST include all four legs — a purchasing-power
     criterion, a scale criterion, velocity/sink data, and a labor-market criterion.

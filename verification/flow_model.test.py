@@ -101,6 +101,28 @@ def main():
     check("flow: yield_component == levy_to_treasury at steady state (every scenario)", ok_yield)
     check("flow: dividend_total == frontier value (d_sustained) at the point (every scenario)", ok_div)
 
+    # (6) Part III participation constraint (C16): W* == d/tau exact; and b_required -> tau for
+    #     concentrated wealth (>= 0.019 and within 0.001 of tau at W_i >= $1M) — the adverse-selection limit.
+    P = M.get("participation", {})
+    check("participation: W* == d_ref / tau (exact)", approx(P.get("w_star", -1), P.get("d_ref", 0) / P.get("tau", 1)))
+    ok_limit = bool(P.get("examples"))
+    for e in P.get("examples", []):
+        if e["w_i"] >= 1_000_000:
+            b = e["b_required"]
+            if not (b >= 0.019 and (P["tau"] - b) <= 0.001 + 1e-9):
+                ok_limit = False
+    check("participation: b_required >= 0.019 and within 0.001 of tau for W_i >= $1M (b -> tau)", ok_limit)
+
+    # (7) Part III time-to-tier (C18) monotonic in g: a higher growth rate reaches each tier sooner.
+    TT = M.get("time_to_tier", {}).get("rows", [])
+    ok_mono = len(TT) >= 2
+    by_g = sorted(TT, key=lambda r: r["g"])
+    for a, b in zip(by_g, by_g[1:]):
+        for key in ("poverty-relevant", "floor"):
+            if key in a and key in b and not (b[key] < a[key]):
+                ok_mono = False
+    check("time_to_tier: years strictly decrease as g increases (both tiers)", ok_mono)
+
     print("\n" + ("%d FAILURE(S)." % fails if fails else "all lockstep checks passed."))
     return 1 if fails else 0
 

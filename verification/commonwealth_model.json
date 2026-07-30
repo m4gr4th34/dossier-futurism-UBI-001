@@ -236,6 +236,47 @@
       "note": "ceiling row; mean-wealth source TO-VERIFY in citation_audit.md"
     }
   ],
+  "participation": {
+    "_note": "Voluntary-entry condition: b >= tau - d/w_i. W* = d/tau is the break-even wealth (entry net-positive at b=0 below it). b_required -> tau as wealth concentrates -> adverse selection (C16).",
+    "tau": 0.02,
+    "d_ref": 1000.0,
+    "w_star": 50000.0,
+    "examples": [
+      {
+        "w_i": 1000000.0,
+        "levy_paid": 20000.0,
+        "dividend": 1000.0,
+        "b_required": 0.019
+      },
+      {
+        "w_i": 10000000.0,
+        "levy_paid": 200000.0,
+        "dividend": 1000.0,
+        "b_required": 0.0199
+      }
+    ]
+  },
+  "time_to_tier": {
+    "_note": "Years to tier from the Ring 1-2 today base ($1k/member, tau=2%, d0=$20) at constant M. t = ln(tier_d/(tau*W0))/ln(1+g). g is young-protocol accretion, NOT a market return; constant M is conservative.",
+    "base_w_per_p": 1000.0,
+    "tau": 0.02,
+    "g_range": [
+      0.05,
+      0.2
+    ],
+    "rows": [
+      {
+        "g": 0.1,
+        "poverty-relevant": 27.3,
+        "floor": 48.3
+      },
+      {
+        "g": 0.2,
+        "poverty-relevant": 14.3,
+        "floor": 25.3
+      }
+    ]
+  },
   "finding": {
     "headline": "At tau=2%, every $50k of wrapped assets per member yields $1,000/yr (tau*W/P); the global-mean-wealth ceiling is ~$2,000/yr; the living-wage tier is unreachable from levies alone at any tau <= 5%.",
     "rings12": "poverty-relevant at bounded membership, symbolic at scale",
@@ -266,6 +307,12 @@
       "computed": 2000,
       "lo": 2000,
       "hi": 2000
+    },
+    {
+      "label": "C16/C18 Part III: W*=$50,000 (d/tau), $1M holder pays $20,000 vs a ~$1,000 dividend, floor time-to-tier ~48 years at g=10%; all quoted in the manuscript",
+      "computed": 50000,
+      "lo": 50000,
+      "hi": 50000
     }
   ]
 }

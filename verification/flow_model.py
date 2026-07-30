@@ -51,6 +51,15 @@ TIERS = [
     {"key": "living-wage",      "d": 10000, "anchor": "jurisdiction-indexed living wage"},
 ]
 
+# ---- ENDOWMENT GROWTH (Part III time-to-tier) — author engineering judgment (ledger C14-style). ----
+# g is the ANNUAL growth of wrapped wealth per member from protocol revenue + retained levy +
+# new-commons formation while the commonwealth is young and its commons is being constituted.
+# It is NOT a market-return assumption (a diversified real return would be ~y=1.5%); it is the
+# high-growth regime of a protocol accreting a commons. Range stated; two rows emitted.
+G_MIN = 0.05   # 5%/yr: conservative young-protocol accretion
+G_MAX = 0.20   # 20%/yr: aggressive early-network accretion (the ceiling we will quote)
+G_ROWS = [0.10, 0.20]   # the two growth rates the time-to-tier block reports
+
 # ---- SCENARIOS (evaluated at TAU_EVAL). W_per_P is wrapped wealth per member. ----
 # P=None rows are quoted per-member directly (no absolute base): the two global-wealth rows.
 SCENARIOS_IN = [
@@ -164,7 +173,69 @@ def build_console_checks():
          "computed": 1000, "lo": 1000, "hi": 1000},
         {"label": "C13 ceiling: tau=2%, global-mean $100k/member -> $2,000/yr; quoted in the manuscript",
          "computed": 2000, "lo": 2000, "hi": 2000},
+        {"label": "C16/C18 Part III: W*=$50,000 (d/tau), $1M holder pays $20,000 vs a ~$1,000 dividend, floor time-to-tier ~48 years at g=10%; all quoted in the manuscript",
+         "computed": 50000, "lo": 50000, "hi": 50000},
     ]
+
+
+# ---- PART III: the participation constraint --------------------------------
+def enter_condition(b, tau, d, w_i):
+    """A holder of wealth w_i enters the VOLUNTARY covenant iff net position is non-negative:
+    d + b*w_i >= tau*w_i  <=>  b >= tau - d/w_i. Returns True if entry is rational."""
+    return b >= tau - d / w_i
+
+
+def build_participation():
+    """Break-even wealth and the b-thresholds that expose adverse selection. Uses the stretch
+    scenario's per-member dividend as the reference d (d_ref = $1,000 at tau=2%). W* = d/tau is
+    the wealth below which entry is net-positive even at b=0; above it, entry needs b >= tau - d/w_i,
+    which -> tau as wealth concentrates. So voluntary entry adversely selects net recipients and
+    weak assets; redistributing EXISTING concentrated wealth needs compulsion (Part III / C16)."""
+    tau, d_ref = TAU_EVAL, 1000.0
+    examples = []
+    for w_i in (1_000_000.0, 10_000_000.0):
+        examples.append({
+            "w_i": w_i,
+            "levy_paid": round(tau * w_i, 6),
+            "dividend": round(d_ref, 6),
+            "b_required": round(tau - d_ref / w_i, 6),
+        })
+    return {
+        "_note": "Voluntary-entry condition: b >= tau - d/w_i. W* = d/tau is the break-even wealth (entry net-positive at b=0 below it). b_required -> tau as wealth concentrates -> adverse selection (C16).",
+        "tau": tau,
+        "d_ref": round(d_ref, 6),
+        "w_star": round(d_ref / tau, 6),   # 50,000 at d=$1,000, tau=2%
+        "examples": examples,
+    }
+
+
+# ---- PART III: time-to-tier for the no-state routes (C18) -------------------
+def years_to_tier(w0_per_p, g, tau, tier_d):
+    """Years until the per-member dividend d(t)=tau*w0*(1+g)^t reaches tier_d, at constant
+    membership. t = ln(tier_d / (tau*w0)) / ln(1+g). Requires g>0 and the target above today's d."""
+    d0 = tau * w0_per_p
+    if g <= 0 or tier_d <= d0:
+        return 0.0
+    return math.log(tier_d / d0) / math.log(1.0 + g)
+
+
+def build_time_to_tier():
+    """From the Ring 1-2 today base ($1k/member, tau=2% -> $20/yr), years to each tier at the two
+    reported growth rates. Constant membership is a CONSERVATIVE simplification (growing M raises
+    the bar). g is a young-protocol accretion rate (see G_MIN/G_MAX), not a market return."""
+    base_w, tau = 1000.0, TAU_EVAL
+    rows = []
+    for g in G_ROWS:
+        row = {"g": g}
+        for t in TIERS:
+            if t["key"] in ("poverty-relevant", "floor"):
+                row[t["key"]] = round(years_to_tier(base_w, g, tau, t["d"]), 1)
+        rows.append(row)
+    return {
+        "_note": "Years to tier from the Ring 1-2 today base ($1k/member, tau=2%, d0=$20) at constant M. t = ln(tier_d/(tau*W0))/ln(1+g). g is young-protocol accretion, NOT a market return; constant M is conservative.",
+        "base_w_per_p": base_w, "tau": tau, "g_range": [G_MIN, G_MAX],
+        "rows": rows,
+    }
 
 
 def build_model():
@@ -188,6 +259,8 @@ def build_model():
         "tiers": TIERS,
         "frontier": build_frontier(),
         "scenarios": scenarios,
+        "participation": build_participation(),
+        "time_to_tier": build_time_to_tier(),
         "finding": build_finding(scenarios),
         "console_checks": build_console_checks(),
     }
